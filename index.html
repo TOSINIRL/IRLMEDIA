@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureHearted Studioz - Premium Hair Care & Styling</title>
+    <meta name="description"
+        content="PureHearted Studioz offers premium hair care services including retwist locs, box braids, knotless braids, and more. Expert styling for natural hair.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // Initialize EmailJS with your public key
+            // You will need to replace 'YOUR_PUBLIC_KEY' with your actual key from EmailJS dashboard
+            emailjs.init("YOUR_PUBLIC_KEY");
+        })();
+    </script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>PureHearted Studioz</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#booking" class="nav-link">Booking</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2 class="hero-title">Where Beauty Meets Artistry</h2>
+            <p class="hero-subtitle">Premium Natural Hair Care & Styling</p>
+            <a href="#booking" class="cta-button">Book Your Appointment</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Expert care for your natural hair journey</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="retwist_locs.jpg" alt="Retwist Locs Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>Retwist Locs</h3>
+                        <p>Professional loc maintenance with precision retwisting for healthy, well-defined locs.</p>
+                        <button class="select-service-btn" data-service="retwist">Select</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="box_braids.jpg" alt="Box Braids Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>Box Braids</h3>
+                        <p>Classic box braids styled to perfection with clean parts and long-lasting results.</p>
+                        <button class="select-service-btn" data-service="box_braids">Select</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="knotless_braids.jpg" alt="Knotless Braids Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>Knotless Braids</h3>
+                        <p>Gentle, natural-looking braids that protect your hair and scalp with minimal tension.</p>
+                        <button class="select-service-btn" data-service="knotless">Select</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="starter_locs.jpg" alt="Starter Locs Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>Starter Locs</h3>
+                        <p>Begin your loc journey with expert guidance and professional installation.</p>
+                        <button class="select-service-btn" data-service="starter">Select</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="cornrows.jpg" alt="Cornrows Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>Cornrows</h3>
+                        <p>Intricate cornrow designs and patterns tailored to your unique style.</p>
+                        <button class="select-service-btn" data-service="cornrows">Select</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image consultation-card">
+                        <img src="hair_consultation.jpg" alt="Hair Consultation Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>Hair Consultation</h3>
+                        <p>Personalized consultation to determine the best styles and care for your hair.</p>
+                        <button class="select-service-btn" data-service="consultation">Select</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Calendar Section -->
+    <section id="booking" class="booking-calendar">
+        <div class="container">
+            <div class="section-header">
+                <h2>Book Your Appointment</h2>
+                <p>Select a date to check availability</p>
+            </div>
+
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button class="calendar-nav prev" aria-label="Previous month">‹</button>
+                    <h3 class="calendar-month">December 2025</h3>
+                    <button class="calendar-nav next" aria-label="Next month">›</button>
+                </div>
+
+                <div class="calendar-grid">
+                    <div class="calendar-day-name">S</div>
+                    <div class="calendar-day-name">M</div>
+                    <div class="calendar-day-name">T</div>
+                    <div class="calendar-day-name">W</div>
+                    <div class="calendar-day-name">T</div>
+                    <div class="calendar-day-name">F</div>
+                    <div class="calendar-day-name">S</div>
+
+                    <!-- Week 1 -->
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day available" data-date="2025-12-01">1</div>
+                    <div class="calendar-day available" data-date="2025-12-02">2</div>
+                    <div class="calendar-day available current" data-date="2025-12-03">3</div>
+                    <div class="calendar-day available" data-date="2025-12-04">4</div>
+                    <div class="calendar-day available" data-date="2025-12-05">5</div>
+                    <div class="calendar-day available" data-date="2025-12-06">6</div>
+
+                    <!-- Week 2 -->
+                    <div class="calendar-day available" data-date="2025-12-07">7</div>
+                    <div class="calendar-day available" data-date="2025-12-08">8</div>
+                    <div class="calendar-day available" data-date="2025-12-09">9</div>
+                    <div class="calendar-day available" data-date="2025-12-10">10</div>
+                    <div class="calendar-day available" data-date="2025-12-11">11</div>
+                    <div class="calendar-day available" data-date="2025-12-12">12</div>
+                    <div class="calendar-day available" data-date="2025-12-13">13</div>
+
+                    <!-- Week 3 -->
+                    <div class="calendar-day available" data-date="2025-12-14">14</div>
+                    <div class="calendar-day available" data-date="2025-12-15">15</div>
+                    <div class="calendar-day available" data-date="2025-12-16">16</div>
+                    <div class="calendar-day available" data-date="2025-12-17">17</div>
+                    <div class="calendar-day available" data-date="2025-12-18">18</div>
+                    <div class="calendar-day available" data-date="2025-12-19">19</div>
+                    <div class="calendar-day available" data-date="2025-12-20">20</div>
+
+                    <!-- Week 4 -->
+                    <div class="calendar-day available" data-date="2025-12-21">21</div>
+                    <div class="calendar-day available" data-date="2025-12-22">22</div>
+                    <div class="calendar-day available" data-date="2025-12-23">23</div>
+                    <div class="calendar-day unavailable" data-date="2025-12-24">24</div>
+                    <div class="calendar-day unavailable" data-date="2025-12-25">25</div>
+                    <div class="calendar-day unavailable" data-date="2025-12-26">26</div>
+                    <div class="calendar-day available selected" data-date="2025-12-27">27</div>
+
+                    <!-- Week 5 -->
+                    <div class="calendar-day available" data-date="2025-12-28">28</div>
+                    <div class="calendar-day available" data-date="2025-12-29">29</div>
+                    <div class="calendar-day available" data-date="2025-12-30">30</div>
+                    <div class="calendar-day available" data-date="2025-12-31">31</div>
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day empty"></div>
+                </div>
+
+                <div class="calendar-legend">
+                    <div class="legend-item">
+                        <span class="legend-dot available-dot"></span>
+                        <span>Available</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot unavailable-dot"></span>
+                        <span>Unavailable</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot selected-dot"></span>
+                        <span>Selected</span>
+                    </div>
+                </div>
+
+                <div class="booking-note">
+                    <p><strong>Note:</strong> Christmas Eve (Dec 24), Christmas Day (Dec 25), and Boxing Day (Dec 26)
+                        are unavailable.</p>
+                    <p>Select a date to view available time slots and book your appointment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Ready to transform your hair? Contact us to book your appointment</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p><a href="tel:+14164297564">(416) 429-7564</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p><a href="mailto:info@pureheartedstudioz.com">info@pureheartedstudioz.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>By Appointment Only</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-media">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com/pureheartedstudioz" target="_blank"
+                            class="social-link instagram">
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://facebook.com/pureheartedstudioz" target="_blank" class="social-link facebook">
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://tiktok.com/@pureheartedstudioz" target="_blank" class="social-link tiktok">
+                            <span>TikTok</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 PureHearted Studioz. All rights reserved.</p>
+            <p>Premium Natural Hair Care & Styling</p>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Complete Your Booking</h2>
+                <p>Selected Date: <span id="selectedDateDisplay"></span></p>
+            </div>
+            <form id="bookingForm" class="booking-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">Service</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select a service</option>
+                        <option value="retwist">Retwist Locs</option>
+                        <option value="box_braids">Box Braids</option>
+                        <option value="knotless">Knotless Braids</option>
+                        <option value="starter">Starter Locs</option>
+                        <option value="cornrows">Cornrows</option>
+                        <option value="consultation">Hair Consultation</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
