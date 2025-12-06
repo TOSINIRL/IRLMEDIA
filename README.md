@@ -1,8 +1,14 @@
-# PureHearted Studioz - Deployment Guide
+# PureHearted Studioz
 
-Your website is ready to go! Follow these steps to make the email form work and publish your site to the web.
+**Live Website:** [https://tosinirl.github.io/IRLMEDIA/](https://tosinirl.github.io/IRLMEDIA/)
 
-## Step 1: Set up EmailJS (For Booking Emails)
+---
+
+## Setup Guide
+
+Your website is deployed on GitHub Pages. Follow these steps if you need to re-configure the email form.
+
+### Step 1: Set up EmailJS (For Booking Emails)
 
 To make the booking form send emails to you, you need a free EmailJS account.
 
@@ -28,7 +34,7 @@ To make the booking form send emails to you, you need a free EmailJS account.
     - Go to "Account" (click your name in top right).
     - **Copy the `Public Key`**.
 
-## Step 2: Update Your Code
+### Step 2: Update Your Code
 
 You need to paste your keys into the code I wrote.
 
@@ -40,13 +46,6 @@ You need to paste your keys into the code I wrote.
     - Replace `YOUR_SERVICE_ID` with the ID from Step 1.2.
     - Replace `YOUR_TEMPLATE_ID` with the ID from Step 1.3.
 
-## Step 3: Deploy to Netlify (Free Hosting)
+### Deployment
 
-1.  Go to [Netlify.com](https://www.netlify.com/) and sign up.
-2.  Log in to your dashboard.
-3.  You will see a box that says "Drag and drop your site output folder here".
-4.  Drag the **entire `pure_hearted_studioz` folder** from your computer into that box.
-5.  Netlify will upload it and give you a live URL (e.g., `https://random-name-12345.netlify.app`) instantly!
-6.  You can change the site name in "Site Settings" -> "Change site name".
-
-**That's it! Your site is live and bookings will be sent to your email.**
+This site is hosted on GitHub Pages. Any changes pushed to the `gh-pages` branch will automatically update the live site.
