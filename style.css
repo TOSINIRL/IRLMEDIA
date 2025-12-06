@@ -829,81 +829,97 @@ body {
 
 /* ===== APPOINTMENT CONFIRMATION SECTION ===== */
 .appointment-confirmation {
-    padding: var(--spacing-lg) 0;
-    background: linear-gradient(135deg, #f5f2ed 0%, #ebe6df 100%);
+    padding: var(--spacing-xl) 0;
+    background:
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter></defs><rect width="100" height="100" filter="url(%23noise)" opacity="0.03"/></svg>'),
+        linear-gradient(135deg, #f0ebe4 0%, #e8e2d8 50%, #ddd6ca 100%);
     position: relative;
     overflow: hidden;
 }
 
+/* Top decorative border line */
 .appointment-confirmation::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent 0%, var(--secondary-color) 20%, var(--secondary-color) 80%, transparent 100%);
+    left: 5%;
+    right: 5%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #2c1810 10%, #2c1810 90%, transparent 100%);
 }
 
+/* Bottom decorative border line */
 .appointment-confirmation::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent 0%, var(--secondary-color) 20%, var(--secondary-color) 80%, transparent 100%);
+    left: 5%;
+    right: 5%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #2c1810 10%, #2c1810 90%, transparent 100%);
 }
 
 .confirmation-wrapper {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-lg);
     position: relative;
+    min-height: 320px;
 }
 
 .confirmation-side-image {
-    width: 180px;
-    height: 220px;
+    width: 200px;
+    height: 280px;
     overflow: hidden;
-    border-radius: 10px;
-    opacity: 0.25;
-    filter: grayscale(100%);
+    border-radius: 0;
+    opacity: 1;
     transition: var(--transition-medium);
+    flex-shrink: 0;
+}
+
+.confirmation-side-image.left img {
+    object-position: center top;
+}
+
+.confirmation-side-image.right img {
+    object-position: center center;
 }
 
 .confirmation-side-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
 }
 
 .confirmation-side-image:hover {
-    opacity: 0.4;
+    opacity: 0.35;
 }
 
 .confirmation-content {
     flex: 1;
-    max-width: 600px;
+    max-width: 580px;
     text-align: center;
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg) var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
 }
 
 .confirmation-header {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-md);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
 }
 
 .header-line {
     flex: 1;
-    max-width: 80px;
+    max-width: 100px;
     height: 2px;
-    background: var(--secondary-color);
+    background: #2c1810;
     position: relative;
 }
 
@@ -913,33 +929,34 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 8px;
-    color: var(--secondary-color);
+    font-size: 10px;
+    color: #2c1810;
 }
 
 .header-line:first-child::before {
-    left: 0;
+    left: -5px;
 }
 
 .header-line:first-child::after {
-    right: 0;
+    right: -5px;
 }
 
 .header-line:last-child::before {
-    left: 0;
+    left: -5px;
 }
 
 .header-line:last-child::after {
-    right: 0;
+    right: -5px;
 }
 
 .confirmation-header h2 {
     font-family: var(--font-heading);
-    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
-    color: var(--secondary-color);
-    letter-spacing: 3px;
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
+    color: #2c1810;
+    letter-spacing: 4px;
     font-weight: 700;
     white-space: nowrap;
+    text-transform: uppercase;
 }
 
 .confirmation-text {
@@ -948,41 +965,44 @@ body {
 
 .confirmation-main {
     font-family: var(--font-body);
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-style: italic;
-    color: var(--text-dark);
-    margin-bottom: var(--spacing-sm);
-    line-height: 1.8;
+    color: #2c1810;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.9;
 }
 
 .confirmation-reminder {
     font-family: var(--font-body);
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-style: italic;
-    color: #555;
-    line-height: 1.8;
+    color: #444;
+    line-height: 1.9;
 }
 
+/* Icons positioned in the lower right area like in the design */
 .confirmation-icons {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    padding-right: var(--spacing-md);
+    margin-top: var(--spacing-sm);
 }
 
 .icon-group {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     position: relative;
 }
 
 .icon-circle {
-    width: 60px;
-    height: 60px;
-    border: 2px solid var(--secondary-color);
+    width: 55px;
+    height: 55px;
+    border: 2px solid #2c1810;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
     transition: var(--transition-medium);
 }
 
@@ -991,39 +1011,146 @@ body {
 }
 
 .phone-icon-circle {
-    margin-left: -15px;
+    margin-left: -12px;
+    margin-bottom: 20px;
     z-index: 1;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
 }
 
 .icon-circle:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
     background: var(--primary-color);
 }
 
-.email-icon,
+.email-icon {
+    font-size: 1.4rem;
+    color: #2c1810;
+}
+
 .phone-icon {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    color: #2c1810;
 }
 
 /* Appointment Confirmation Responsive */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+    .confirmation-wrapper {
+        gap: var(--spacing-md);
+    }
+
     .confirmation-side-image {
-        display: none;
+        width: 150px;
+        height: 220px;
+    }
+
+    .confirmation-content {
+        padding: var(--spacing-md);
     }
 
     .confirmation-header h2 {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 768px) {
+    .appointment-confirmation {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .confirmation-wrapper {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        min-height: auto;
+    }
+
+    .confirmation-side-image {
+        width: 100%;
+        height: 180px;
+        max-width: 300px;
+        margin: 0 auto;
+        border-radius: 10px;
+        order: 1;
+    }
+
+    .confirmation-side-image.left {
+        order: 0;
+    }
+
+    .confirmation-side-image.right {
+        display: none;
+    }
+
+    .confirmation-content {
+        order: 1;
+        padding: var(--spacing-sm);
+    }
+
+    .confirmation-header {
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
+    }
+
+    .confirmation-header h2 {
+        font-size: 1.2rem;
         letter-spacing: 2px;
         white-space: normal;
+        text-align: center;
+        width: 100%;
+        order: 0;
     }
 
     .header-line {
-        max-width: 40px;
+        display: none;
     }
 
     .confirmation-main,
     .confirmation-reminder {
         font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .confirmation-icons {
+        justify-content: center;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .confirmation-side-image {
+        height: 150px;
+        max-width: 250px;
+    }
+
+    .confirmation-header h2 {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .confirmation-main,
+    .confirmation-reminder {
+        font-size: 0.9rem;
+    }
+
+    .icon-circle {
+        width: 45px;
+        height: 45px;
+    }
+
+    .phone-icon-circle {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 15px;
+    }
+
+    .email-icon {
+        font-size: 1.2rem;
+    }
+
+    .phone-icon {
+        font-size: 1rem;
     }
 }
 
