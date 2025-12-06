@@ -283,6 +283,11 @@ body {
     object-position: top center;
 }
 
+/* Custom positioning for Short Braids image to show face */
+.short-braids-card .service-image img {
+    object-position: top center;
+}
+
 
 .service-content {
     padding: var(--spacing-md);
