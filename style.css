@@ -37,6 +37,8 @@
 
 html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    /* Prevent font scaling on orientation change */
 }
 
 body {
@@ -44,6 +46,11 @@ body {
     color: var(--text-dark);
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    /* Smoother fonts on MacOS/iOS */
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-overflow-scrolling: touch;
+    /* Enable momentum scrolling */
 }
 
 .container {
@@ -64,6 +71,8 @@ body {
     padding: var(--spacing-sm) 0;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
     transition: var(--transition-medium);
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 
 .navbar .container {
@@ -139,6 +148,15 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    transform: translateZ(0);
+    /* Hardware acceleration */
+}
+
+/* Fix for iOS fixed background scroll jitter */
+@media (hover: none) and (pointer: coarse) {
+    .hero {
+        background-attachment: scroll;
+    }
 }
 
 .hero-overlay {
