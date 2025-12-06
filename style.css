@@ -278,6 +278,11 @@ body {
     object-position: center top;
 }
 
+/* Custom positioning for Long Braids image to show face/top */
+.long-braids-card .service-image img {
+    object-position: top center;
+}
+
 
 .service-content {
     padding: var(--spacing-md);
