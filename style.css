@@ -284,14 +284,9 @@ body {
 }
 
 /* Custom positioning for Short Braids image to show face */
-.short-braids-card .service-image {
-    background: #1a1410;
-    /* Match dark theme background for letterboxing */
-}
-
 .short-braids-card .service-image img {
-    object-fit: contain;
-    object-position: center;
+    object-fit: cover;
+    object-position: top center;
 }
 
 
