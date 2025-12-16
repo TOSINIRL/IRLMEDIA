@@ -1007,16 +1007,16 @@ button {
 
 .confirmation-main {
     font-family: var(--font-body);
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     font-style: italic;
     color: #2c1810;
     margin-bottom: var(--spacing-md);
-    line-height: 1.9;
+    line-height: 1.6;
 }
 
 .confirmation-reminder {
     font-family: var(--font-body);
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     font-style: italic;
     color: #444;
     line-height: 1.9;
