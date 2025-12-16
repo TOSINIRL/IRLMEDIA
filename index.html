@@ -77,7 +77,7 @@
 
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="box_braids.jpg" alt="Single Braids Service">
+                        <img src="single_braids.jpg" alt="Single Braids Service">
                     </div>
                     <div class="service-content">
                         <h3>Single Braids</h3>
@@ -99,9 +99,9 @@
                     </div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card cornrows-card">
                     <div class="service-image">
-                        <img src="cornrows.jpg" alt="Cornrows with Design Service">
+                        <img src="cornrows_design.jpg" alt="Cornrows with Design Service">
                     </div>
                     <div class="service-content">
                         <h3>Cornrows with Design</h3>
@@ -123,12 +123,23 @@
 
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="twists.jpg" alt="Twists Service">
+                        <img src="2_strand_twist.jpg" alt="Two Strand Twist Service">
                     </div>
                     <div class="service-content">
-                        <h3>Twists</h3>
+                        <h3>Two Strand Twist</h3>
                         <p>Beautiful two-strand twists with precise parts for a stylish protective look.</p>
                         <button class="select-service-btn" data-service="twist">Select</button>
+                    </div>
+                </div>
+
+                <div class="service-card side-barrels-card">
+                    <div class="service-image">
+                        <img src="side_barrels.png" alt="Side Barrels Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>Side Barrels</h3>
+                        <p>Stylish side barrel twists for a unique and trendy look.</p>
+                        <button class="select-service-btn" data-service="side_barrels">Select</button>
                     </div>
                 </div>
 
@@ -154,27 +165,9 @@
                     </div>
                 </div>
 
-                <div class="service-card short-braids-card">
-                    <div class="service-image">
-                        <img src="short_braids.jpg" alt="Short Braids Service">
-                    </div>
-                    <div class="service-content">
-                        <h3>Short Braids</h3>
-                        <p>Chic and manageable short braids. A stylish, low-maintenance option full of personality.</p>
-                        <button class="select-service-btn" data-service="short_braids">Select</button>
-                    </div>
-                </div>
 
-                <div class="service-card">
-                    <div class="service-image consultation-card">
-                        <img src="hair_consultation.jpg" alt="Hair Consultation Service">
-                    </div>
-                    <div class="service-content">
-                        <h3>Hair Consultation</h3>
-                        <p>Personalized consultation to determine the best styles and care for your hair.</p>
-                        <button class="select-service-btn" data-service="consultation">Select</button>
-                    </div>
-                </div>
+
+
             </div>
         </div>
     </section>
@@ -402,7 +395,7 @@
             <div class="confirmation-wrapper">
                 <!-- Left decorative image -->
                 <div class="confirmation-side-image left">
-                    <img src="cornrows.jpg" alt="Cornrows hairstyle">
+                    <img src="cornrows_design.jpg" alt="Cornrows hairstyle">
                 </div>
 
                 <!-- Center content -->
@@ -465,7 +458,7 @@
                         <div class="contact-icon">✉️</div>
                         <div class="contact-details">
                             <h3>Email</h3>
-                            <p><a href="mailto:info@pureheartedstudioz.com">info@pureheartedstudioz.com</a></p>
+                            <p><a href="mailto:zakiyahmk2005@gmail.com">zakiyahmk2005@gmail.com</a></p>
                         </div>
                     </div>
 
@@ -473,7 +466,7 @@
                         <div class="contact-icon">📍</div>
                         <div class="contact-details">
                             <h3>Location</h3>
-                            <p>25 MUTUAL STREET, TORONTO ONTARIO</p>
+                            <p>DOWNTOWN TORONTO</p>
                         </div>
                     </div>
                 </div>
@@ -517,6 +510,21 @@
                     <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 </div>
                 <div class="form-group">
+                    <label for="time">Preferred Time</label>
+                    <select id="time" name="time" required>
+                        <option value="">Select a time</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="11:00 AM">11:00 AM</option>
+                        <option value="12:00 PM">12:00 PM</option>
+                        <option value="1:00 PM">1:00 PM</option>
+                        <option value="2:00 PM">2:00 PM</option>
+                        <option value="3:00 PM">3:00 PM</option>
+                        <option value="4:00 PM">4:00 PM</option>
+                        <option value="5:00 PM">5:00 PM</option>
+                        <option value="6:00 PM">6:00 PM</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" placeholder="Enter your full name" required>
                 </div>
@@ -530,11 +538,12 @@
                         <option value="starter">Starter Locs</option>
                         <option value="cornrows">Cornrows with Design</option>
                         <option value="straight_back">Straight Back Cornrows</option>
-                        <option value="twist">Twists</option>
+                        <option value="twist">Two Strand Twist</option>
+                        <option value="side_barrels">Side Barrels</option>
                         <option value="long_braids">Long Braids</option>
                         <option value="medium_braids">Medium Braids</option>
-                        <option value="short_braids">Short Braids</option>
-                        <option value="consultation">Hair Consultation</option>
+
+
                     </select>
                 </div>
                 <button type="submit" class="submit-btn">Confirm Booking</button>

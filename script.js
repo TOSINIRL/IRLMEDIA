@@ -183,7 +183,8 @@ bookingForm.addEventListener('submit', (e) => {
         from_email: bookingData.email,
         service: bookingData.service,
         date: bookingData.date,
-        message: `New booking request for ${bookingData.service} on ${bookingData.date}`
+        time: bookingData.time,
+        message: `New booking request for ${bookingData.service} on ${bookingData.date} at ${bookingData.time}`
     };
 
     // Send email using EmailJS
