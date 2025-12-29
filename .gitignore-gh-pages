@@ -1,0 +1,12 @@
+# Ignore deployment packages in gh-pages branch
+deploy_to_godaddy.zip
+deploy_to_godaddy_updated.zip
+
+# Ignore public folder (we serve from root on gh-pages)
+public/
+
+# Ignore Python scripts
+*.py
+
+# Ignore other project folders
+payless/
