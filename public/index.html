@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>PureHeartedStudio - Premium Hair Care & Styling</title>
+    <meta name="description"
+        content="PureHeartedStudio offers premium hair care services including retwist locs, box braids, knotless braids, and more. Expert styling for natural hair.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // Initialize EmailJS with your public key
+            // You will need to replace 'YOUR_PUBLIC_KEY' with your actual key from EmailJS dashboard
+            emailjs.init("YOUR_PUBLIC_KEY");
+        })();
+    </script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>PureHeartedStudio</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#booking" class="nav-link">Booking</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2 class="hero-title">Where Beauty Meets Artistry</h2>
+            <p class="hero-subtitle">Premium Natural Hair Care & Styling</p>
+            <a href="#booking" class="cta-button">Book Your Appointment</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Expert care for your natural hair journey</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="assets/images/retwist_locs.jpg" alt="Loc Retwist Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>Loc Retwist</h3>
+                        <p>Professional loc maintenance with precision retwisting for healthy, well-defined locs.</p>
+                        <button class="select-service-btn" data-service="retwist">Select</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="assets/images/single_braids.jpg" alt="Single Braids Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>Single Braids</h3>
+                        <p>Classic box braids styled to perfection with clean parts and long-lasting results.</p>
+                        <button class="select-service-btn" data-service="box_braids">Select</button>
+                    </div>
+                </div>
+
+
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="assets/images/starter_locs.jpg" alt="Starter Locs Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>Starter Locs</h3>
+                        <p>Begin your loc journey with expert guidance and professional installation.</p>
+                        <button class="select-service-btn" data-service="starter">Select</button>
+                    </div>
+                </div>
+
+                <div class="service-card cornrows-card">
+                    <div class="service-image">
+                        <img src="assets/images/cornrows_design.jpg" alt="Cornrows with Design Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>Cornrows with Design</h3>
+                        <p>Intricate cornrow designs and patterns tailored to your unique style.</p>
+                        <button class="select-service-btn" data-service="cornrows">Select</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="assets/images/straight_back.jpg" alt="Straight Back Cornrows Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>Straight Back Cornrows</h3>
+                        <p>Classic straight back braids with clean lines for a timeless, sleek look.</p>
+                        <button class="select-service-btn" data-service="straight_back">Select</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="assets/images/2_strand_twist.jpg" alt="Two Strand Twist Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>Two Strand Twist</h3>
+                        <p>Beautiful two-strand twists with precise parts for a stylish protective look.</p>
+                        <button class="select-service-btn" data-service="twist">Select</button>
+                    </div>
+                </div>
+
+                <div class="service-card side-barrels-card">
+                    <div class="service-image">
+                        <img src="assets/images/side_barrels.png" alt="Side Barrels Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>Side Barrels</h3>
+                        <p>Stylish side barrel twists for a unique and trendy look.</p>
+                        <button class="select-service-btn" data-service="side_barrels">Select</button>
+                    </div>
+                </div>
+
+                <div class="service-card long-braids-card">
+                    <div class="service-image">
+                        <img src="assets/images/long_braids.jpg" alt="Long Braids Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>Long Braids</h3>
+                        <p>Stunning long braids that turn heads. Perfect for those who love length and versatility.</p>
+                        <button class="select-service-btn" data-service="long_braids">Select</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="assets/images/medium_braids.jpg" alt="Medium Braids Service">
+                    </div>
+                    <div class="service-content">
+                        <h3>Medium Braids</h3>
+                        <p>The perfect balance of length and style. Easy to manage and beautiful to wear.</p>
+                        <button class="select-service-btn" data-service="medium_braids">Select</button>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Your Hairstylist Section -->
+    <section id="stylist" class="meet-stylist">
+        <div class="container">
+            <div class="stylist-wrapper">
+                <!-- Left Side - Image -->
+                <div class="stylist-left">
+                    <div class="stylist-image-container">
+                        <img src="assets/images/stylist_photo.jpg" alt="Meet Your Hairstylist"
+                            class="stylist-main-image">
+                    </div>
+                </div>
+
+                <!-- Right Side - About Text -->
+                <div class="stylist-right">
+                    <h2 class="stylist-heading">
+                        <span class="heading-light">MEET YOUR</span>
+                        <span class="heading-bold">HAIRSTYLIST</span>
+                    </h2>
+                    <p class="stylist-bio">
+                        Hi, I'm Zaykiyah! With over a decade of self-taught expertise, I specialize in
+                        nurturing natural hair, locs, and protective styles that truly care for your crown.
+                        My passion lies in crafting beautiful looks while prioritizing the health and vitality
+                        of your hair. Every product and technique I use is chosen to promote lasting wellness,
+                        so you can feel confident and supported throughout your hair journey. Can't wait to meet you!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price List Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="price-title">Price List</h2>
+                <p>Quality service at transparent prices</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- LOCS Category -->
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <h3>LOCS</h3>
+                    </div>
+                    <div class="pricing-card-body">
+                        <div class="price-item">
+                            <span class="service-name">Short</span>
+                            <span class="price-dots"></span>
+                            <span class="price">$70</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Medium</span>
+                            <span class="price-dots"></span>
+                            <span class="price">$80</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Long</span>
+                            <span class="price-dots"></span>
+                            <span class="price">$90</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Style</span>
+                            <span class="price-dots"></span>
+                            <span class="price">$10+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MENS BRAIDS Category -->
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <h3>MENS BRAIDS</h3>
+                    </div>
+                    <div class="pricing-card-body">
+                        <div class="price-item">
+                            <span class="service-name">Twist</span>
+                            <span class="price-dots"></span>
+                            <span class="price">$70</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Cornrow Straight Backs</span>
+                            <span class="price-dots"></span>
+                            <span class="price">$16+</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Cornrow with Design</span>
+                            <span class="price-dots"></span>
+                            <span class="price">$16+</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Single Braids</span>
+                            <span class="price-dots"></span>
+                            <span class="price">$70+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WOMENS BRAIDS Category -->
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <h3>WOMENS BRAIDS</h3>
+                    </div>
+                    <div class="pricing-card-body">
+                        <div class="price-item">
+                            <span class="service-name">Long Braids</span>
+                            <span class="price-dots"></span>
+                            <span class="price">$140+</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Medium Braids</span>
+                            <span class="price-dots"></span>
+                            <span class="price">$120+</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="service-name">Short Braids</span>
+                            <span class="price-dots"></span>
+                            <span class="price">$100+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Calendar Section -->
+    <section id="booking" class="booking-calendar">
+        <div class="container">
+            <div class="section-header">
+                <h2>Book Your Appointment</h2>
+                <p>Select a date to check availability</p>
+            </div>
+
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button class="calendar-nav prev" aria-label="Previous month">‹</button>
+                    <h3 class="calendar-month">December 2025</h3>
+                    <button class="calendar-nav next" aria-label="Next month">›</button>
+                </div>
+
+                <div class="calendar-grid">
+                    <div class="calendar-day-name">S</div>
+                    <div class="calendar-day-name">M</div>
+                    <div class="calendar-day-name">T</div>
+                    <div class="calendar-day-name">W</div>
+                    <div class="calendar-day-name">T</div>
+                    <div class="calendar-day-name">F</div>
+                    <div class="calendar-day-name">S</div>
+
+                    <!-- Week 1 -->
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day available" data-date="2025-12-01">1</div>
+                    <div class="calendar-day available" data-date="2025-12-02">2</div>
+                    <div class="calendar-day available current" data-date="2025-12-03">3</div>
+                    <div class="calendar-day available" data-date="2025-12-04">4</div>
+                    <div class="calendar-day available" data-date="2025-12-05">5</div>
+                    <div class="calendar-day available" data-date="2025-12-06">6</div>
+
+                    <!-- Week 2 -->
+                    <div class="calendar-day available" data-date="2025-12-07">7</div>
+                    <div class="calendar-day available" data-date="2025-12-08">8</div>
+                    <div class="calendar-day available" data-date="2025-12-09">9</div>
+                    <div class="calendar-day available" data-date="2025-12-10">10</div>
+                    <div class="calendar-day available" data-date="2025-12-11">11</div>
+                    <div class="calendar-day available" data-date="2025-12-12">12</div>
+                    <div class="calendar-day available" data-date="2025-12-13">13</div>
+
+                    <!-- Week 3 -->
+                    <div class="calendar-day available" data-date="2025-12-14">14</div>
+                    <div class="calendar-day available" data-date="2025-12-15">15</div>
+                    <div class="calendar-day available" data-date="2025-12-16">16</div>
+                    <div class="calendar-day available" data-date="2025-12-17">17</div>
+                    <div class="calendar-day available" data-date="2025-12-18">18</div>
+                    <div class="calendar-day available" data-date="2025-12-19">19</div>
+                    <div class="calendar-day available" data-date="2025-12-20">20</div>
+
+                    <!-- Week 4 -->
+                    <div class="calendar-day available" data-date="2025-12-21">21</div>
+                    <div class="calendar-day available" data-date="2025-12-22">22</div>
+                    <div class="calendar-day available" data-date="2025-12-23">23</div>
+                    <div class="calendar-day unavailable" data-date="2025-12-24">24</div>
+                    <div class="calendar-day unavailable" data-date="2025-12-25">25</div>
+                    <div class="calendar-day unavailable" data-date="2025-12-26">26</div>
+                    <div class="calendar-day available selected" data-date="2025-12-27">27</div>
+
+                    <!-- Week 5 -->
+                    <div class="calendar-day available" data-date="2025-12-28">28</div>
+                    <div class="calendar-day available" data-date="2025-12-29">29</div>
+                    <div class="calendar-day available" data-date="2025-12-30">30</div>
+                    <div class="calendar-day available" data-date="2025-12-31">31</div>
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day empty"></div>
+                    <div class="calendar-day empty"></div>
+                </div>
+
+                <div class="calendar-legend">
+                    <div class="legend-item">
+                        <span class="legend-dot available-dot"></span>
+                        <span>Available</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot unavailable-dot"></span>
+                        <span>Unavailable</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot selected-dot"></span>
+                        <span>Selected</span>
+                    </div>
+                </div>
+
+                <div class="booking-note">
+                    <p><strong>Note:</strong> Christmas Eve (Dec 24), Christmas Day (Dec 25), and Boxing Day (Dec 26)
+                        are unavailable.</p>
+                    <p>Select a date to view available time slots and book your appointment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Confirmation Section -->
+    <section class="appointment-confirmation">
+        <div class="container">
+            <div class="confirmation-wrapper">
+                <!-- Left decorative image -->
+                <div class="confirmation-side-image left">
+                    <img src="assets/images/cornrows_design.jpg" alt="Cornrows hairstyle">
+                </div>
+
+                <!-- Center content -->
+                <div class="confirmation-content">
+                    <div class="confirmation-header">
+                        <div class="header-line"></div>
+                        <h2>APPOINTMENT CONFIRMATION</h2>
+                        <div class="header-line"></div>
+                    </div>
+
+                    <div class="confirmation-text">
+                        <p class="confirmation-main">
+                            You will receive a confirmation email upon booking your appointment.
+                        </p>
+                        <p class="confirmation-reminder">
+                            Email & text reminders, that include address details, will be sent 48 hours before your
+                            appointment.
+                        </p>
+                    </div>
+
+                    <div class="confirmation-icons">
+                        <div class="icon-group">
+                            <div class="icon-circle">
+                                <span class="email-icon">✉</span>
+                            </div>
+                            <div class="icon-circle phone-icon-circle">
+                                <span class="phone-icon">📱</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right decorative image -->
+                <div class="confirmation-side-image right">
+                    <img src="assets/images/retwist_locs.jpg" alt="Locs hairstyle">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Ready to transform your hair? Contact us to book your appointment</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p><a href="tel:+14164297564">(416) 429-7564</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p><a href="mailto:zakiyahmk2005@gmail.com">zakiyahmk2005@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>DOWNTOWN TORONTO</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-media">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com/pureheartedstudioz" target="_blank"
+                            class="social-link instagram">
+                            <span>Instagram</span>
+                        </a>
+
+                        <a href="https://tiktok.com/@pureheartedstudioz" target="_blank" class="social-link tiktok">
+                            <span>TikTok</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 PureHeartedStudio. All rights reserved.</p>
+            <p>Premium Natural Hair Care & Styling</p>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Complete Your Booking</h2>
+                <p>Selected Date: <span id="selectedDateDisplay"></span></p>
+            </div>
+            <form id="bookingForm" class="booking-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Preferred Time</label>
+                    <select id="time" name="time" required>
+                        <option value="">Select a time</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="11:00 AM">11:00 AM</option>
+                        <option value="12:00 PM">12:00 PM</option>
+                        <option value="1:00 PM">1:00 PM</option>
+                        <option value="2:00 PM">2:00 PM</option>
+                        <option value="3:00 PM">3:00 PM</option>
+                        <option value="4:00 PM">4:00 PM</option>
+                        <option value="5:00 PM">5:00 PM</option>
+                        <option value="6:00 PM">6:00 PM</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">Service</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select a service</option>
+                        <option value="retwist">Loc Retwist</option>
+                        <option value="box_braids">Single Braids</option>
+
+                        <option value="starter">Starter Locs</option>
+                        <option value="cornrows">Cornrows with Design</option>
+                        <option value="straight_back">Straight Back Cornrows</option>
+                        <option value="twist">Two Strand Twist</option>
+                        <option value="side_barrels">Side Barrels</option>
+                        <option value="long_braids">Long Braids</option>
+                        <option value="medium_braids">Medium Braids</option>
+
+
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
