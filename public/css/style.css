@@ -309,9 +309,8 @@ button {
 }
 
 .cornrows-card .service-image img {
-    object-fit: contain;
-    background-color: #f5f5f5;
-    /* Light background to fill empty space */
+    object-fit: cover;
+    object-position: center;
 }
 
 .side-barrels-card .service-image img {
