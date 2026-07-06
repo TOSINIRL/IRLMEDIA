@@ -11,6 +11,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:Inter,system-ui,Arial,sans-serif;background:radial-gradient(circle at top right, rgba(146, 141, 255, 0.16), transparent 24%), linear-gradient(180deg,#090c10 0%,#07090d 100%);color:var(--text);margin:0;min-height:100vh}
+body.is-loading{overflow:hidden}
 button, .btn, .chip{font:inherit}
 button{cursor:pointer}
 img{max-width:100%;display:block}
@@ -93,6 +94,13 @@ img{max-width:100%;display:block}
 .quick-download-btn:hover{transform:translateY(-1px);box-shadow:0 12px 24px rgba(147,171,217,.26)}
 .quick-download-btn::before{content:'';position:absolute;inset:0 auto 0 -120%;width:70%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);transition:left .45s ease;pointer-events:none}
 .quick-download-btn:hover::before{left:130%}
+.site-loader{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:radial-gradient(circle at 80% 12%, rgba(147,171,217,.22), transparent 34%),radial-gradient(circle at 18% 85%, rgba(231,199,248,.16), transparent 40%),linear-gradient(180deg, #05080f 0%, #03060d 100%);opacity:1;visibility:visible;transition:opacity .55s ease,visibility .55s ease}
+.site-loader.is-leaving{opacity:0;visibility:hidden}
+.site-loader-card{position:relative;width:min(86vw,520px);padding:32px 28px;border-radius:28px;border:1px solid rgba(255,255,255,.14);background:linear-gradient(165deg, rgba(255,255,255,.10), rgba(255,255,255,.03));box-shadow:0 30px 80px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.04);overflow:hidden}
+.site-loader-title{margin:0;color:#f3f6ff;font-family:"Beau Rivage",cursive;font-size:clamp(3rem,8vw,6rem);line-height:.88;text-align:center;animation:loaderTitleIn .75s cubic-bezier(.2,.9,.2,1) both}
+.site-loader-sub{margin:8px 0 0;color:rgba(236,241,255,.78);text-align:center;font-family:"Sora",sans-serif;font-size:.86rem;letter-spacing:.2em;text-transform:uppercase;animation:loaderSubIn .8s ease .12s both}
+.loader-bar{margin-top:20px;width:100%;height:4px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden}
+.loader-bar span{display:block;height:100%;width:36%;border-radius:inherit;background:linear-gradient(90deg, #e7c7f8, #93abd9, #ede996);animation:loaderRun 1.25s ease-in-out infinite}
 .modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(0,0,0,.72);visibility:hidden;opacity:0;pointer-events:none;transition:.2s ease}
 .modal[aria-hidden="false"]{visibility:visible;opacity:1;pointer-events:auto}
 .modal-content{position:relative;background:#091014;padding:28px;border-radius:28px;max-width:460px;width:100%;border:1px solid rgba(255,255,255,.08);box-shadow:0 30px 70px rgba(0,0,0,.45)}
@@ -140,7 +148,21 @@ body.is-ready .hero-panel{animation:introUp .6s cubic-bezier(0.22,1,0.36,1) .12s
   from{opacity:1;transform:translateY(0) scale(1)}
   to{opacity:0;transform:translateY(-18px) scale(.99)}
 }
+@keyframes loaderRun{
+  0%{transform:translateX(-105%)}
+  50%{transform:translateX(95%)}
+  100%{transform:translateX(260%)}
+}
+@keyframes loaderTitleIn{
+  from{opacity:0;transform:translateY(16px) scale(.98);filter:blur(8px)}
+  to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+}
+@keyframes loaderSubIn{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
 @media (prefers-reduced-motion: reduce){
+  .loader-bar span,.site-loader-title,.site-loader-sub{animation:none}
   .view-enter,.view-exit,.download-area.is-visible .download-item,body.is-ready .hero-copy,body.is-ready .hero-panel{animation:none}
   .chip,.download-area::before{animation:none}
 }
