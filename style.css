@@ -75,9 +75,10 @@ img{max-width:100%;display:block}
 .download-item{padding:18px;border-radius:24px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
 .download-item p{margin:0 0 12px;color:var(--muted)}
 .download-item a,.download-item button{display:inline-flex;padding:10px 14px;border-radius:14px;background:linear-gradient(135deg,var(--blueberry),#c7d7f7);color:#111;font-weight:700;text-decoration:none;border:none}
-.commit-visual{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 12px;margin:0 0 10px;border-radius:14px;background:rgba(147,171,217,.14);border:1px dashed rgba(147,171,217,.35);font-size:.82rem;color:#e8efff}
-.commit-visual span{display:inline-flex;align-items:center;line-height:1.2}
-.commit-visual .flow-arrow{font-weight:700;color:#c7d7f7}
+.commit-visual{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 12px;margin:0 0 10px;border-radius:14px;background:rgba(147,171,217,.14);border:1px dashed rgba(147,171,217,.35)}
+.commit-step{display:inline-flex;align-items:center;gap:6px;padding:6px 9px;border-radius:999px;background:rgba(10,14,20,.72);border:1px solid rgba(147,171,217,.28);font-size:.76rem;line-height:1.15;color:#e8efff;white-space:nowrap}
+.commit-step strong{display:inline-flex;align-items:center;justify-content:center;min-width:30px;padding:2px 6px;border-radius:999px;background:linear-gradient(135deg,#9ec0ef,#d4e2ff);color:#101623;font-size:.62rem;letter-spacing:.06em}
+.commit-link{font-weight:700;color:#c7d7f7;opacity:.9}
 .commit-analogy{font-size:.88rem;line-height:1.45;color:rgba(255,255,255,.8)}
 .download-item{opacity:0;transform:translateY(18px) scale(.98)}
 .download-area.is-visible .download-item{animation:downloadReveal .55s cubic-bezier(0.22,1,0.36,1) both;animation-delay:calc(var(--stagger, 0) * 90ms)}
@@ -138,7 +139,7 @@ body.is-ready .hero-panel{animation:introUp .6s cubic-bezier(0.22,1,0.36,1) .12s
   .chip{animation:none}
 }
 @media (max-width:960px){.banner-inner{grid-template-columns:1fr;}.hero-copy,.hero-panel{width:100%}.section-header{flex-direction:column;}.download-header{flex-direction:column;}.category-shell{padding:24px}} 
-@media (max-width:640px){.banner{padding:28px 0 14px}.hero-copy{padding:24px 20px}.cta-row{flex-direction:column;align-items:stretch}.chip{width:100%;text-align:center}.card-panel{min-height:auto;padding:24px}.panel-text{max-width:none}.download-area{padding-bottom:24px}.commit-visual{font-size:.78rem}}
+@media (max-width:640px){.banner{padding:28px 0 14px}.hero-copy{padding:24px 20px}.cta-row{flex-direction:column;align-items:stretch}.chip{width:100%;text-align:center}.card-panel{min-height:auto;padding:24px}.panel-text{max-width:none}.download-area{padding-bottom:24px}.commit-visual{gap:6px}.commit-step{font-size:.72rem;padding:6px 8px}.commit-step strong{min-width:26px}}
 /* Cursive style for the Download Center text block */
 #downloadArea .eyebrow,
 #downloadArea h2,
