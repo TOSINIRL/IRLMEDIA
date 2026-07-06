@@ -68,15 +68,12 @@ img{max-width:100%;display:block}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(135deg,var(--raspberry),#f7a5d2);padding:12px 16px;border-radius:14px;color:#111;text-decoration:none;font-weight:700;transition:transform .2s ease,box-shadow .2s ease}
 .btn:hover{transform:translateY(-1px);box-shadow:0 18px 30px rgba(242,97,156,.2)}
 .btn.ghost{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:var(--text)}
-.download-area{max-width:1180px;margin:28px auto;padding:0 20px 40px}
+.download-area{max-width:1180px;margin:28px auto;padding:0 20px 40px;position:relative;overflow:visible}
+.download-area::before{content:'';position:absolute;inset:-8px 20px auto;border-radius:22px;height:88px;background:linear-gradient(90deg,rgba(231,199,248,.14),rgba(147,171,217,.08),rgba(237,233,150,.1));filter:blur(16px);opacity:.35;pointer-events:none;animation:headerGlow 5.2s ease-in-out infinite}
 .download-header{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;margin-bottom:18px}
 .download-header h2{margin:8px 0 0;font-size:2rem}
-.cheat-script-heading,
-.cheat-script-sub{font-family:"Pacifico", "Brush Script MT", cursive;color:#eef3ff;animation:scriptFloat 3.6s ease-in-out infinite}
-.cheat-script-heading{text-transform:none;letter-spacing:.04em;font-size:clamp(1.5rem,3.2vw,2.1rem);margin:0 0 8px;color:var(--soft-lilac)}
-.cheat-script-sub{font-size:clamp(1.05rem,2.2vw,1.35rem);line-height:1.45;color:rgba(245,248,255,.95)}
 .download-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-.download-item{padding:18px;border-radius:24px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
+.download-item{padding:18px;border-radius:24px;background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.08);box-shadow:0 12px 24px rgba(5,8,12,.22);transition:transform .28s cubic-bezier(.22,1,.36,1), box-shadow .28s ease, border-color .28s ease}
 .download-item p{margin:0 0 12px;color:var(--muted)}
 .download-item a,.download-item button{display:inline-flex;padding:10px 14px;border-radius:14px;background:linear-gradient(135deg,var(--blueberry),#c7d7f7);color:#111;font-weight:700;text-decoration:none;border:none}
 .commit-visual{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 12px;margin:0 0 10px;border-radius:14px;background:rgba(147,171,217,.14);border:1px dashed rgba(147,171,217,.35)}
@@ -86,6 +83,7 @@ img{max-width:100%;display:block}
 .commit-analogy{font-size:.88rem;line-height:1.45;color:rgba(255,255,255,.8)}
 .download-item{opacity:0;transform:translateY(18px) scale(.98)}
 .download-area.is-visible .download-item{animation:downloadReveal .55s cubic-bezier(0.22,1,0.36,1) both;animation-delay:calc(var(--stagger, 0) * 90ms)}
+.download-area.is-visible .download-item:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 18px 32px rgba(12,19,30,.35);border-color:rgba(199,215,247,.4)}
 .download-row .download-item:nth-child(1){--stagger:1}
 .download-row .download-item:nth-child(2){--stagger:2}
 .download-row .download-item:nth-child(3){--stagger:3}
@@ -130,9 +128,9 @@ body.is-ready .hero-panel{animation:introUp .6s cubic-bezier(0.22,1,0.36,1) .12s
   0%,100%{transform:translateY(0);box-shadow:0 0 0 rgba(147,171,217,0)}
   50%{transform:translateY(-1px);box-shadow:0 8px 20px rgba(147,171,217,.16)}
 }
-@keyframes scriptFloat{
-  0%,100%{transform:translateY(0);text-shadow:0 0 0 rgba(231,199,248,0)}
-  50%{transform:translateY(-2px);text-shadow:0 8px 22px rgba(147,171,217,.28)}
+@keyframes headerGlow{
+  0%,100%{opacity:.2;transform:translateY(0)}
+  50%{opacity:.55;transform:translateY(-3px)}
 }
 @keyframes viewSlideIn{
   from{opacity:0;transform:translateY(24px) scale(.98)}
@@ -144,7 +142,7 @@ body.is-ready .hero-panel{animation:introUp .6s cubic-bezier(0.22,1,0.36,1) .12s
 }
 @media (prefers-reduced-motion: reduce){
   .view-enter,.view-exit,.download-area.is-visible .download-item,body.is-ready .hero-copy,body.is-ready .hero-panel{animation:none}
-  .chip,.cheat-script-heading,.cheat-script-sub{animation:none}
+  .chip,.download-area::before{animation:none}
 }
 @media (max-width:960px){.banner-inner{grid-template-columns:1fr;}.hero-copy,.hero-panel{width:100%}.section-header{flex-direction:column;}.download-header{flex-direction:column;}.category-shell{padding:24px}} 
 @media (max-width:640px){.banner{padding:28px 0 14px}.hero-copy{padding:24px 20px}.cta-row{flex-direction:column;align-items:stretch}.chip{width:100%;text-align:center}.card-panel{min-height:auto;padding:24px}.panel-text{max-width:none}.download-area{padding-bottom:24px}.commit-visual{gap:6px}.commit-step{font-size:.72rem;padding:6px 8px}.commit-step strong{min-width:26px}}
