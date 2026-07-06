@@ -71,6 +71,10 @@ img{max-width:100%;display:block}
 .download-area{max-width:1180px;margin:28px auto;padding:0 20px 40px}
 .download-header{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;margin-bottom:18px}
 .download-header h2{margin:8px 0 0;font-size:2rem}
+.cheat-script-heading,
+.cheat-script-sub{font-family:"Pacifico", "Brush Script MT", cursive;color:#eef3ff;animation:scriptFloat 3.6s ease-in-out infinite}
+.cheat-script-heading{text-transform:none;letter-spacing:.04em;font-size:clamp(1.5rem,3.2vw,2.1rem);margin:0 0 8px;color:var(--soft-lilac)}
+.cheat-script-sub{font-size:clamp(1.05rem,2.2vw,1.35rem);line-height:1.45;color:rgba(245,248,255,.95)}
 .download-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
 .download-item{padding:18px;border-radius:24px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
 .download-item p{margin:0 0 12px;color:var(--muted)}
@@ -126,6 +130,10 @@ body.is-ready .hero-panel{animation:introUp .6s cubic-bezier(0.22,1,0.36,1) .12s
   0%,100%{transform:translateY(0);box-shadow:0 0 0 rgba(147,171,217,0)}
   50%{transform:translateY(-1px);box-shadow:0 8px 20px rgba(147,171,217,.16)}
 }
+@keyframes scriptFloat{
+  0%,100%{transform:translateY(0);text-shadow:0 0 0 rgba(231,199,248,0)}
+  50%{transform:translateY(-2px);text-shadow:0 8px 22px rgba(147,171,217,.28)}
+}
 @keyframes viewSlideIn{
   from{opacity:0;transform:translateY(24px) scale(.98)}
   to{opacity:1;transform:translateY(0) scale(1)}
@@ -136,7 +144,7 @@ body.is-ready .hero-panel{animation:introUp .6s cubic-bezier(0.22,1,0.36,1) .12s
 }
 @media (prefers-reduced-motion: reduce){
   .view-enter,.view-exit,.download-area.is-visible .download-item,body.is-ready .hero-copy,body.is-ready .hero-panel{animation:none}
-  .chip{animation:none}
+  .chip,.cheat-script-heading,.cheat-script-sub{animation:none}
 }
 @media (max-width:960px){.banner-inner{grid-template-columns:1fr;}.hero-copy,.hero-panel{width:100%}.section-header{flex-direction:column;}.download-header{flex-direction:column;}.category-shell{padding:24px}} 
 @media (max-width:640px){.banner{padding:28px 0 14px}.hero-copy{padding:24px 20px}.cta-row{flex-direction:column;align-items:stretch}.chip{width:100%;text-align:center}.card-panel{min-height:auto;padding:24px}.panel-text{max-width:none}.download-area{padding-bottom:24px}.commit-visual{gap:6px}.commit-step{font-size:.72rem;padding:6px 8px}.commit-step strong{min-width:26px}}
