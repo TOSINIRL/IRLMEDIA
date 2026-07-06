@@ -14,7 +14,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const modal = document.getElementById('waitlist-modal');
   const scrollButton = document.getElementById('scroll-to-packs');
   const quickDownloadBtns = document.querySelectorAll('.quick-download-btn');
+  const downloadAreas = document.querySelectorAll('.download-area');
   const SWITCH_DURATION_MS = 360;
+
+  window.requestAnimationFrame(()=>{
+    document.body.classList.add('is-ready');
+  });
 
   const packs = {
     celebrities: {
@@ -127,6 +132,25 @@ document.addEventListener('DOMContentLoaded', ()=>{
       const target = document.querySelector('.chips-row');
       if (target) target.scrollIntoView({ behavior:'smooth', block:'center' });
     });
+  }
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach((entry)=>{
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18 });
+
+    downloadAreas.forEach((area)=>observer.observe(area));
+  } else {
+    downloadAreas.forEach((area)=>area.classList.add('is-visible'));
+  }
+
+  if (!downloadAreas.length) {
+    return;
   }
 
   quickDownloadBtns.forEach((btn)=>{
