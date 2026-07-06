@@ -54,6 +54,13 @@ img{max-width:100%;display:block}
 .card{display:grid;gap:12px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));padding:18px;border-radius:26px;border:1px solid rgba(255,255,255,.08);box-shadow:0 18px 40px rgba(0,0,0,.2);transition:transform .2s ease,box-shadow .2s ease}
 .card:hover{transform:translateY(-3px);box-shadow:0 28px 48px rgba(0,0,0,.24)}
 .card img{width:100%;height:184px;object-fit:cover;border-radius:20px}
+.category-thumb{width:100%;height:184px;border-radius:20px;border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
+.category-thumb.celebrities{background:linear-gradient(145deg,#cb75d8,#b95ecf)}
+.category-thumb.influencers{background:linear-gradient(145deg,#4bb6f5,#39a3df)}
+.category-thumb.movies{background:linear-gradient(145deg,#f2c04f,#e4ad37)}
+.category-thumb.shows{background:linear-gradient(145deg,#58dc73,#4dcd66)}
+.category-card-item .card-copy{align-items:flex-end}
+.category-card-item .card-actions{margin-top:2px}
 .card-copy{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .card-copy h3{margin:0;font-size:1.05rem}
 .tags{font-size:.8rem;color:var(--muted);margin:0}

@@ -5,10 +5,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const backBtn = document.getElementById('backToLanding');
   const categoryTitle = document.getElementById('categoryTitle');
   const categoryDescription = document.getElementById('categoryDescription');
-  const categoryLabel = document.getElementById('categoryLabel');
-  const categoryPackName = document.getElementById('categoryPackName');
-  const categoryBlurb = document.getElementById('categoryBlurb');
-  const categoryDownloadBtn = document.getElementById('categoryDownloadBtn');
+  const categoryTabs = document.querySelectorAll('#categoryTabs .tab');
+  const categoryGrid = document.getElementById('categoryGrid');
   const openModal = document.getElementById('open-waitlist');
   const closeModal = document.getElementById('close-waitlist');
   const modal = document.getElementById('waitlist-modal');
@@ -24,29 +22,110 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const packs = {
     celebrities: {
       label: 'Celebrities',
-      title: 'Celebrity Cuts',
+      title: 'Celebrity Scenepacks',
       description: 'A curated scenepack built for iconic covers and editorial storytelling.',
-      downloadText: 'Download Celebrity Cut pack'
+      route: 'celebrities',
+      swatchClass: 'celebrities'
     },
     influencers: {
       label: 'Influencers',
-      title: 'Influencer Edit',
+      title: 'Influencer Scenepacks',
       description: 'Scroll-stopping, social-first scene styles made for creator energy.',
-      downloadText: 'Download Influencer Pack'
+      route: 'influencers',
+      swatchClass: 'influencers'
     },
     movies: {
       label: 'Movies',
-      title: 'Movie Moment',
+      title: 'Movie Scenepacks',
       description: 'Cinematic scene moods designed for dramatic impact and filmic style.',
-      downloadText: 'Download Movie Pack'
+      route: 'movies',
+      swatchClass: 'movies'
     },
     shows: {
       label: 'Shows',
-      title: 'Show Scenes',
+      title: 'Show Scenepacks',
       description: 'Story-driven vibes crafted for binge-ready series cover art.',
-      downloadText: 'Download Show Scenes pack'
+      route: 'shows',
+      swatchClass: 'shows'
     }
   };
+
+  const categoryKeys = Object.keys(packs);
+
+  function parseCategoryFromHash(hashValue){
+    if (!hashValue || !hashValue.startsWith('#category-')) return 'all';
+    const key = hashValue.replace('#category-', '');
+    return categoryKeys.includes(key) ? key : 'all';
+  }
+
+  function setActiveTab(filterKey){
+    categoryTabs.forEach((tab)=>{
+      const isActive = tab.dataset.filter === filterKey;
+      tab.classList.toggle('active', isActive);
+      tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+  }
+
+  function renderCategoryGrid(filterKey = 'all'){
+    if (!categoryGrid) return;
+    const cardsToShow = filterKey === 'all'
+      ? categoryKeys
+      : categoryKeys.filter((key)=>key === filterKey);
+
+    categoryGrid.innerHTML = cardsToShow.map((key)=>{
+      const pack = packs[key];
+      return `
+        <article class="card category-card-item" data-category="${key}">
+          <div class="category-thumb ${pack.swatchClass}" aria-hidden="true"></div>
+          <div class="card-copy">
+            <h3>${pack.title}</h3>
+            <p class="tags">${pack.label}</p>
+          </div>
+          <div class="card-actions">
+            <button class="btn primary see-more-btn" data-category="${pack.route}">Click here to see more</button>
+            <button class="btn ghost preview-btn" data-category="${pack.route}">Preview</button>
+          </div>
+        </article>
+      `;
+    }).join('');
+
+    if (categoryTitle) {
+      categoryTitle.textContent = filterKey === 'all'
+        ? 'Choose the vibe you want to explore'
+        : `${packs[filterKey].label} scenepacks`;
+    }
+
+    if (categoryDescription) {
+      categoryDescription.textContent = filterKey === 'all'
+        ? 'Tap any category to filter the scenepack grid below. Each card includes a quick action.'
+        : `Showing ${packs[filterKey].label} only. Click another tab or Back to see all vibes again.`;
+    }
+
+    setActiveTab(filterKey);
+  }
+
+  function ensureCategoryView(withTransition = true){
+    if (!landingSection || !categorySection) return;
+    if (categorySection.classList.contains('hidden')) {
+      if (withTransition) {
+        transitionViews(landingSection, categorySection);
+      } else {
+        landingSection.classList.add('hidden');
+        categorySection.classList.remove('hidden');
+      }
+    }
+  }
+
+  function showCategoryView(categoryKey, withTransition = true){
+    const safeKey = categoryKeys.includes(categoryKey) ? categoryKey : 'all';
+    ensureCategoryView(withTransition);
+    renderCategoryGrid(safeKey);
+
+    const nextHash = safeKey === 'all' ? '#category-all' : `#category-${safeKey}`;
+    if (window.location.hash !== nextHash) {
+      window.history.replaceState(null, '', nextHash);
+    }
+  }
 
   function transitionViews(fromEl, toEl){
     if (!fromEl || !toEl) return;
@@ -67,33 +146,54 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }, SWITCH_DURATION_MS);
   }
 
-  function showCategoryView(categoryKey){
-    const pack = packs[categoryKey];
-    if (!pack) return;
-    transitionViews(landingSection, categorySection);
-    categoryTitle.textContent = `Choose the vibe you want to explore`;
-    categoryDescription.textContent = `You selected ${pack.label}. Here is the dedicated pack for that mood.`;
-    categoryLabel.textContent = pack.label;
-    categoryPackName.textContent = pack.title;
-    categoryBlurb.textContent = pack.description;
-    categoryDownloadBtn.textContent = 'click here to download';
-    categoryDownloadBtn.onclick = (e)=>{
-      e.preventDefault();
-      alert(`${pack.downloadText} ready.`);
-    };
-  }
-
   categoryBtns.forEach(btn=>{
     btn.addEventListener('click', ()=>{
       const category = btn.dataset.category;
-      showCategoryView(category);
+      showCategoryView(category, true);
     });
   });
+
+  categoryTabs.forEach((tab)=>{
+    tab.addEventListener('click', ()=>{
+      const filterKey = tab.dataset.filter || 'all';
+      showCategoryView(filterKey, false);
+    });
+  });
+
+  if (categoryGrid) {
+    categoryGrid.addEventListener('click', (event)=>{
+      const target = event.target;
+      if (!(target instanceof HTMLElement)) return;
+
+      const seeMoreBtn = target.closest('.see-more-btn');
+      if (seeMoreBtn instanceof HTMLElement) {
+        const key = seeMoreBtn.dataset.category || 'all';
+        showCategoryView(key, false);
+        return;
+      }
+
+      const previewBtn = target.closest('.preview-btn');
+      if (previewBtn instanceof HTMLElement) {
+        const key = previewBtn.dataset.category || 'all';
+        const pack = packs[key];
+        if (pack) {
+          alert(`Preview placeholder for ${pack.title}`);
+        }
+      }
+    });
+  }
 
   if (backBtn){
     backBtn.addEventListener('click', ()=>{
       transitionViews(categorySection, landingSection);
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
     });
+  }
+
+  if (window.location.hash.startsWith('#category-')) {
+    showCategoryView(parseCategoryFromHash(window.location.hash), false);
+  } else {
+    renderCategoryGrid('all');
   }
 
   function toggleModal(open){

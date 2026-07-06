@@ -34,7 +34,7 @@
           <div class="badge">ScenePack</div>
           <p class="panel-text">Click the words, explore a category, and download your next scene cover asset.</p>
           <div class="panel-buttons">
-            <button class="panel-btn">click here to download</button>
+            <button class="panel-btn">Click here to see more</button>
             <button class="panel-btn secondary">request scenepack</button>
           </div>
         </div>
@@ -94,22 +94,19 @@
             <p class="eyebrow">ScenePack categories</p>
             <h2 id="categoryTitle">Choose the vibe you want to explore</h2>
           </div>
-          <p id="categoryDescription">Select a mood and download the specialized scene pack for that category.</p>
+          <p id="categoryDescription">Tap any category to filter the scenepack grid below. Each card includes a quick
+            action.</p>
         </div>
 
-        <div class="category-grid">
-          <article class="category-card">
-            <div class="category-card-top">
-              <span class="category-label" id="categoryLabel">Celebrities</span>
-              <h3 id="categoryPackName">Celebrity Cuts</h3>
-            </div>
-            <p class="category-copy" id="categoryBlurb">A curated scenepack built for iconic covers and influencer-level
-              editorial storytelling.</p>
-            <div class="card-actions">
-              <button class="btn primary" id="categoryDownloadBtn">click here to download</button>
-            </div>
-          </article>
+        <div class="tabs" id="categoryTabs" role="tablist" aria-label="Category filters">
+          <button class="tab active" role="tab" aria-selected="true" data-filter="all">All</button>
+          <button class="tab" role="tab" aria-selected="false" data-filter="celebrities">Celebrities</button>
+          <button class="tab" role="tab" aria-selected="false" data-filter="influencers">Influencers</button>
+          <button class="tab" role="tab" aria-selected="false" data-filter="movies">Movies</button>
+          <button class="tab" role="tab" aria-selected="false" data-filter="shows">Shows</button>
         </div>
+
+        <div class="category-grid grid" id="categoryGrid"></div>
       </div>
     </section>
   </main>
