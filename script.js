@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const closeModal = document.getElementById('close-waitlist');
   const modal = document.getElementById('waitlist-modal');
   const scrollButton = document.getElementById('scroll-to-packs');
+  const quickDownloadBtns = document.querySelectorAll('.quick-download-btn');
   const SWITCH_DURATION_MS = 360;
 
   const packs = {
@@ -127,4 +128,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
       if (target) target.scrollIntoView({ behavior:'smooth', block:'center' });
     });
   }
+
+  quickDownloadBtns.forEach((btn)=>{
+    btn.addEventListener('click', ()=>{
+      const pack = btn.dataset.pack || 'ScenePack';
+      alert(`Download placeholder for ${pack}`);
+    });
+  });
 });

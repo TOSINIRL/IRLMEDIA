@@ -61,7 +61,7 @@ img{max-width:100%;display:block}
 .download-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
 .download-item{padding:18px;border-radius:24px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
 .download-item p{margin:0 0 12px;color:var(--muted)}
-.download-item a{display:inline-flex;padding:10px 14px;border-radius:14px;background:linear-gradient(135deg,var(--blueberry),#c7d7f7);color:#111;font-weight:700;text-decoration:none}
+.download-item a,.download-item button{display:inline-flex;padding:10px 14px;border-radius:14px;background:linear-gradient(135deg,var(--blueberry),#c7d7f7);color:#111;font-weight:700;text-decoration:none;border:none}
 .modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(0,0,0,.72);visibility:hidden;opacity:0;pointer-events:none;transition:.2s ease}
 .modal[aria-hidden="false"]{visibility:visible;opacity:1;pointer-events:auto}
 .modal-content{position:relative;background:#091014;padding:28px;border-radius:28px;max-width:460px;width:100%;border:1px solid rgba(255,255,255,.08);box-shadow:0 30px 70px rgba(0,0,0,.45)}
@@ -82,6 +82,7 @@ form textarea{resize:vertical}
 .category-card h3{font-size:2rem;margin:0}
 .category-copy{margin:0;color:rgba(255,255,255,.82);line-height:1.8;font-size:1rem;max-width:58ch}
 .category-card .btn.primary{padding:14px 20px}
+.category-download-area{padding:0;margin:30px 0 0}
 @keyframes viewSlideIn{
   from{opacity:0;transform:translateY(24px) scale(.98)}
   to{opacity:1;transform:translateY(0) scale(1)}

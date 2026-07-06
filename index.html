@@ -1,18 +1,21 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Slutify — ScenePacks</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header class="banner">
     <div class="banner-inner">
       <div class="hero-copy">
         <p class="eyebrow">Slutify</p>
         <h1>ScenePacks for creatives, influencers, and stories.</h1>
-        <p class="hero-text">A playful landing page featuring clickable scene buttons, stylized pack tiles, and a waitlist pop-up for new scenepack releases.</p>
+        <p class="hero-text">A playful landing page featuring clickable scene buttons, stylized pack tiles, and a
+          waitlist pop-up for new scenepack releases.</p>
         <div class="cta-row">
           <button class="cta" id="scroll-to-packs">Browse Packs</button>
           <button class="cta ghost" id="open-waitlist">Join Waitlist</button>
@@ -56,12 +59,41 @@
               <span class="category-label" id="categoryLabel">Celebrities</span>
               <h3 id="categoryPackName">Celebrity Cuts</h3>
             </div>
-            <p class="category-copy" id="categoryBlurb">A curated scenepack built for iconic covers and influencer-level editorial storytelling.</p>
+            <p class="category-copy" id="categoryBlurb">A curated scenepack built for iconic covers and influencer-level
+              editorial storytelling.</p>
             <div class="card-actions">
               <button class="btn primary" id="categoryDownloadBtn">click here to download</button>
             </div>
           </article>
         </div>
+
+        <section class="download-area category-download-area" id="downloadArea">
+          <div class="download-header">
+            <div>
+              <p class="eyebrow">Download Center</p>
+              <h2>Ready to grab a pack?</h2>
+            </div>
+            <p>These quick links represent the current available scenepacks. Click any to test the download action.</p>
+          </div>
+          <div class="download-row">
+            <div class="download-item">
+              <p>Celebrity Cuts</p>
+              <button class="quick-download-btn" data-pack="Celebrity Cuts">click here to download</button>
+            </div>
+            <div class="download-item">
+              <p>Influencer Edit</p>
+              <button class="quick-download-btn" data-pack="Influencer Edit">click here to download</button>
+            </div>
+            <div class="download-item">
+              <p>Movie Moment</p>
+              <button class="quick-download-btn" data-pack="Movie Moment">click here to download</button>
+            </div>
+            <div class="download-item">
+              <p>Show Scenes</p>
+              <button class="quick-download-btn" data-pack="Show Scenes">click here to download</button>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
   </main>
@@ -87,4 +119,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
