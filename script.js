@@ -1,4 +1,35 @@
 document.addEventListener('DOMContentLoaded', ()=>{
+  const siteLoader = document.querySelector('[data-site-loader]');
+  const body = document.body;
+  let loaderHidden = false;
+  const initTime = performance.now();
+
+  const hideLoader = ()=>{
+    if (!siteLoader || loaderHidden) return;
+    loaderHidden = true;
+    const minDuration = 1800;
+    const wait = Math.max(0, minDuration - (performance.now() - initTime));
+
+    window.setTimeout(()=>{
+      siteLoader.classList.add('is-leaving');
+      window.setTimeout(()=>{
+        siteLoader.remove();
+        body.classList.remove('is-loading');
+      }, 620);
+    }, wait);
+  };
+
+  if (siteLoader) {
+    body.classList.add('is-loading');
+    if (document.readyState === 'complete') {
+      hideLoader();
+    } else {
+      window.addEventListener('load', hideLoader, { once: true });
+    }
+    // Safety fallback so loader cannot get stuck.
+    window.setTimeout(hideLoader, 4200);
+  }
+
   const categoryBtns = document.querySelectorAll('.category-btn');
   const landingSection = document.querySelector('.banner');
   const categorySection = document.getElementById('categorySection');
