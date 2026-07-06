@@ -27,6 +27,12 @@ img{max-width:100%;display:block}
 .chips-row{display:flex;flex-wrap:wrap;gap:10px}
 .chip{border:none;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.05);color:var(--text);font-weight:600;letter-spacing:.01em;transition:background .2s ease}
 .chip:hover{background:rgba(255,255,255,.14)}
+.chip{animation:chipPulse 2.8s ease-in-out infinite}
+.chips-row .chip:nth-child(1){animation-delay:.05s}
+.chips-row .chip:nth-child(2){animation-delay:.18s}
+.chips-row .chip:nth-child(3){animation-delay:.31s}
+.chips-row .chip:nth-child(4){animation-delay:.44s}
+.chips-row:hover .chip{animation-play-state:paused}
 .hero-panel{display:flex;justify-content:center}
 .card-panel{width:100%;min-height:360px;padding:28px;border-radius:32px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);box-shadow:0 22px 55px rgba(0,0,0,.25);position:relative;overflow:hidden}
 .card-panel::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at top right, rgba(255,255,255,.15), transparent 34%);pointer-events:none}
@@ -103,6 +109,10 @@ body.is-ready .hero-panel{animation:introUp .6s cubic-bezier(0.22,1,0.36,1) .12s
   from{opacity:0;transform:translateY(18px) scale(.98)}
   to{opacity:1;transform:translateY(0) scale(1)}
 }
+@keyframes chipPulse{
+  0%,100%{transform:translateY(0);box-shadow:0 0 0 rgba(147,171,217,0)}
+  50%{transform:translateY(-1px);box-shadow:0 8px 20px rgba(147,171,217,.16)}
+}
 @keyframes viewSlideIn{
   from{opacity:0;transform:translateY(24px) scale(.98)}
   to{opacity:1;transform:translateY(0) scale(1)}
@@ -113,6 +123,7 @@ body.is-ready .hero-panel{animation:introUp .6s cubic-bezier(0.22,1,0.36,1) .12s
 }
 @media (prefers-reduced-motion: reduce){
   .view-enter,.view-exit,.download-area.is-visible .download-item,body.is-ready .hero-copy,body.is-ready .hero-panel{animation:none}
+  .chip{animation:none}
 }
 @media (max-width:960px){.banner-inner{grid-template-columns:1fr;}.hero-copy,.hero-panel{width:100%}.section-header{flex-direction:column;}.download-header{flex-direction:column;}.category-shell{padding:24px}} 
 @media (max-width:640px){.banner{padding:28px 0 14px}.hero-copy{padding:24px 20px}.cta-row{flex-direction:column;align-items:stretch}.chip{width:100%;text-align:center}.card-panel{min-height:auto;padding:24px}.panel-text{max-width:none}.download-area{padding-bottom:24px}}
