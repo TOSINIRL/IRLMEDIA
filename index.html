@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>IRL Media — Scenepacks</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="banner">
+    <div class="banner-inner">
+      <img src="assets/banner-placeholder.jpg" alt="Banner" class="banner-image">
+      <div class="banner-overlay">
+        <h1>IRL Media ScenePacks</h1>
+        <p class="sub">Click the labels to explore different packs</p>
+        <div class="cta-row">
+          <button class="cta" data-target="#packs">ScenePacks</button>
+          <button class="cta" id="open-waitlist">Request a ScenePack</button>
+          <a class="small-link" href="#download-area">See Downloads</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="packs" class="packs">
+      <nav class="tabs" role="tablist">
+        <button class="tab active" data-filter="all">All</button>
+        <button class="tab" data-filter="celebrities">Celebrities</button>
+        <button class="tab" data-filter="influencers">Influencers</button>
+        <button class="tab" data-filter="movies">Movies</button>
+        <button class="tab" data-filter="shows">Shows</button>
+      </nav>
+
+      <div id="grid" class="grid">
+        <!-- Example item -->
+        <article class="card" data-type="celebrities">
+          <img src="assets/pack-1.jpg" alt="Pack 1">
+          <h3>Pack: Celebrity Cuts</h3>
+          <p class="tags">Celebrities</p>
+          <div class="card-actions">
+            <a class="btn" href="#" download>Download</a>
+            <a class="btn ghost" href="#">Preview</a>
+          </div>
+        </article>
+        <article class="card" data-type="influencers">
+          <img src="assets/pack-2.jpg" alt="Pack 2">
+          <h3>Pack: Influencer Edit</h3>
+          <p class="tags">Influencers</p>
+          <div class="card-actions">
+            <a class="btn" href="#" download>Download</a>
+            <a class="btn ghost" href="#">Preview</a>
+          </div>
+        </article>
+        <!-- More cards... -->
+      </div>
+    </section>
+
+    <section id="download-area" class="download-area">
+      <h2>Download Center</h2>
+      <p>Select a pack and click the small 'click here to download' link under each cover.</p>
+      <div class="download-row" id="download-row">
+        <!-- dynamically filled list of available downloads -->
+      </div>
+    </section>
+  </main>
+
+  <div id="waitlist-modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="close-waitlist">✕</button>
+      <h3>Request a ScenePack / Join Waitlist</h3>
+      <p>Leave your email and a short note about the type of scenepack you want.</p>
+      <form id="waitlist-form">
+        <input type="email" name="email" placeholder="you@example.com" required>
+        <select name="category">
+          <option value="celebrities">Celebrities</option>
+          <option value="influencers">Influencers</option>
+          <option value="movies">Movies</option>
+          <option value="shows">Shows</option>
+        </select>
+        <textarea name="note" placeholder="Short note (optional)" rows="3"></textarea>
+        <button class="btn primary" type="submit">Join Waitlist</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
