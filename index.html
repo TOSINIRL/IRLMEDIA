@@ -18,10 +18,10 @@
           <button class="cta ghost" id="open-waitlist">Join Waitlist</button>
         </div>
         <div class="chips-row">
-          <button class="chip">Celebrities</button>
-          <button class="chip">Influencers</button>
-          <button class="chip">Movies</button>
-          <button class="chip">Shows</button>
+          <button class="chip category-btn" data-category="celebrities">Celebrities</button>
+          <button class="chip category-btn" data-category="influencers">Influencers</button>
+          <button class="chip category-btn" data-category="movies">Movies</button>
+          <button class="chip category-btn" data-category="shows">Shows</button>
         </div>
       </div>
       <div class="hero-panel">
@@ -39,80 +39,30 @@
   </header>
 
   <main>
-    <section id="packs" class="packs">
-      <div class="section-header">
-        <div>
-          <p class="eyebrow">ScenePack categories</p>
-          <h2>Choose the vibe you want to explore.</h2>
+    <section id="categorySection" class="category-section hidden">
+      <div class="category-shell">
+        <button id="backToLanding" class="back-link">← Back to all vibes</button>
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">ScenePack categories</p>
+            <h2 id="categoryTitle">Choose the vibe you want to explore</h2>
+          </div>
+          <p id="categoryDescription">Select a mood and download the specialized scene pack for that category.</p>
         </div>
-        <p class="section-intro">Tap any category to filter the scenepack grid below. Each cover includes a quick download action.</p>
-      </div>
 
-      <nav class="tabs" role="tablist">
-        <button class="tab active" data-filter="all">All</button>
-        <button class="tab" data-filter="celebrities">Celebrities</button>
-        <button class="tab" data-filter="influencers">Influencers</button>
-        <button class="tab" data-filter="movies">Movies</button>
-        <button class="tab" data-filter="shows">Shows</button>
-      </nav>
-
-      <div id="grid" class="grid">
-        <article class="card" data-type="celebrities">
-          <img src="assets/pack-1.jpg" alt="Celebrity pack cover">
-          <div class="card-copy">
-            <h3>Celebrity Cuts</h3>
-            <p class="tags">Celebrities</p>
-          </div>
-          <div class="card-actions">
-            <a class="btn" href="#" download>click here to download</a>
-            <a class="btn ghost" href="#">Preview</a>
-          </div>
-        </article>
-        <article class="card" data-type="influencers">
-          <img src="assets/pack-2.jpg" alt="Influencer pack cover">
-          <div class="card-copy">
-            <h3>Influencer Edit</h3>
-            <p class="tags">Influencers</p>
-          </div>
-          <div class="card-actions">
-            <a class="btn" href="#" download>click here to download</a>
-            <a class="btn ghost" href="#">Preview</a>
-          </div>
-        </article>
-        <article class="card" data-type="movies">
-          <img src="assets/pack-3.jpg" alt="Movie pack cover">
-          <div class="card-copy">
-            <h3>Movie Moment</h3>
-            <p class="tags">Movies</p>
-          </div>
-          <div class="card-actions">
-            <a class="btn" href="#" download>click here to download</a>
-            <a class="btn ghost" href="#">Preview</a>
-          </div>
-        </article>
-        <article class="card" data-type="shows">
-          <img src="assets/pack-4.jpg" alt="Show pack cover">
-          <div class="card-copy">
-            <h3>Show Scenes</h3>
-            <p class="tags">Shows</p>
-          </div>
-          <div class="card-actions">
-            <a class="btn" href="#" download>click here to download</a>
-            <a class="btn ghost" href="#">Preview</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="download-area" class="download-area">
-      <div class="download-header">
-        <div>
-          <p class="eyebrow">Download Center</p>
-          <h2>Ready to grab a pack?</h2>
+        <div class="category-grid">
+          <article class="category-card">
+            <div class="category-card-top">
+              <span class="category-label" id="categoryLabel">Celebrities</span>
+              <h3 id="categoryPackName">Celebrity Cuts</h3>
+            </div>
+            <p class="category-copy" id="categoryBlurb">A curated scenepack built for iconic covers and influencer-level editorial storytelling.</p>
+            <div class="card-actions">
+              <button class="btn primary" id="categoryDownloadBtn">click here to download</button>
+            </div>
+          </article>
         </div>
-        <p>These quick links represent the current available scenepacks. Click any to test the download action.</p>
       </div>
-      <div class="download-row" id="download-row"></div>
     </section>
   </main>
 
