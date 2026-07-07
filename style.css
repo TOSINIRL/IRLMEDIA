@@ -448,6 +448,43 @@ img {
   gap: 14px
 }
 
+.download-center-grid {
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+}
+
+.download-center-card {
+  min-height: 136px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.download-center-card h3 {
+  margin: 0;
+  font-size: 2.1rem;
+  line-height: 1.1;
+  color: #eef3ff;
+}
+
+.download-center-btn {
+  padding: 10px 18px;
+  border-radius: 16px;
+  font-size: 1.05rem;
+  line-height: 1;
+  text-transform: lowercase;
+}
+
+@media (max-width:640px) {
+  .download-center-card h3 {
+    font-size: 1.7rem;
+  }
+
+  .download-center-btn {
+    font-size: .98rem;
+  }
+}
+
 .download-item {
   padding: 18px;
   border-radius: 24px;
