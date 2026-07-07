@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Celestial Scenepacks - Page 2</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <main class="page-two" aria-labelledby="page-two-title">
+        <section class="page-two-shell">
+            <div class="page-two-head">
+                <div>
+                    <p class="page-two-overline">Scenepack Categories</p>
+                    <h1 id="page-two-title">Choose the vibe you want to explore.</h1>
+                </div>
+                <p class="page-two-note">
+                    Tap any category to filter the scenepack grid below. Each cover includes a quick download action.
+                </p>
+            </div>
+
+            <div class="page-two-filter" role="tablist" aria-label="Page 2 categories">
+                <button class="page-two-chip is-active" type="button" role="tab" aria-selected="true"
+                    data-category-filter="all">
+                    All
+                </button>
+                <button class="page-two-chip" type="button" role="tab" aria-selected="false"
+                    data-category-filter="celebrities">
+                    Celebrities
+                </button>
+                <button class="page-two-chip" type="button" role="tab" aria-selected="false"
+                    data-category-filter="influencers">
+                    Influencers
+                </button>
+                <button class="page-two-chip" type="button" role="tab" aria-selected="false"
+                    data-category-filter="movies">
+                    Movies
+                </button>
+                <button class="page-two-chip" type="button" role="tab" aria-selected="false"
+                    data-category-filter="shows">
+                    Shows
+                </button>
+            </div>
+
+            <div class="page-two-grid">
+                <article class="page-two-card" data-category="celebrities">
+                    <div class="page-two-cover celebrities"></div>
+                    <div class="page-two-card-head">
+                        <h2>Celebrity Cuts</h2>
+                        <p>Celebrities</p>
+                    </div>
+                    <button class="page-two-download" type="button">click here to download</button>
+                    <button class="page-two-preview" type="button">Preview</button>
+                </article>
+
+                <article class="page-two-card" data-category="influencers">
+                    <div class="page-two-cover influencers"></div>
+                    <div class="page-two-card-head">
+                        <h2>Influencer Edit</h2>
+                        <p>Influencers</p>
+                    </div>
+                    <button class="page-two-download" type="button">click here to download</button>
+                    <button class="page-two-preview" type="button">Preview</button>
+                </article>
+
+                <article class="page-two-card" data-category="movies">
+                    <div class="page-two-cover movies"></div>
+                    <div class="page-two-card-head">
+                        <h2>Movie Moment</h2>
+                        <p>Movies</p>
+                    </div>
+                    <button class="page-two-download" type="button">click here to download</button>
+                    <button class="page-two-preview" type="button">Preview</button>
+                </article>
+
+                <article class="page-two-card" data-category="shows">
+                    <div class="page-two-cover shows"></div>
+                    <div class="page-two-card-head">
+                        <h2>Show Scenes</h2>
+                        <p>Shows</p>
+                    </div>
+                    <button class="page-two-download" type="button">click here to download</button>
+                    <button class="page-two-preview" type="button">Preview</button>
+                </article>
+            </div>
+
+            <a class="page-two-back" href="index.html">Back to page 1</a>
+        </section>
+    </main>
+</body>
+
+</html>
