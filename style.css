@@ -625,11 +625,12 @@ img {
 }
 
 .site-loader-sub {
-  margin: 8px 0 0;
+  margin: 16px 0 0;
   color: rgba(236, 241, 255, .78);
   text-align: center;
   font-family: "Sora", sans-serif;
   font-size: .86rem;
+  line-height: 1.35;
   letter-spacing: .2em;
   text-transform: uppercase;
   animation: loaderSubIn .8s ease .12s both
