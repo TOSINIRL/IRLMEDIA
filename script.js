@@ -134,15 +134,22 @@ const openPageWithLoader = (targetHref) => {
   document.body.appendChild(transitionLoader);
   document.body.classList.add('is-loading');
 
-  window.setTimeout(() => {
-    window.location.href = targetHref;
-  }, 420);
+  // Force a paint before navigating so the loader is visible reliably.
+  transitionLoader.getBoundingClientRect();
+
+  window.requestAnimationFrame(() => {
+    window.requestAnimationFrame(() => {
+      window.setTimeout(() => {
+        window.location.href = targetHref;
+      }, 520);
+    });
+  });
 };
 
-document.querySelectorAll('a[href="page2.html"]').forEach((link) => {
+document.querySelectorAll('[data-open-page2]').forEach((link) => {
   link.addEventListener('click', (event) => {
     event.preventDefault();
-    openPageWithLoader(link.getAttribute('href'));
+    openPageWithLoader(link.getAttribute('href') || 'page2.html');
   });
 });
 
