@@ -117,7 +117,7 @@ const categoryButtons = document.querySelectorAll('[data-category-filter]');
 const categoryCards = document.querySelectorAll('.page-two-card[data-category]');
 let isPageTransitioning = false;
 
-const openPageWithLoader = (targetHref) => {
+const openPageWithLoader = (targetHref, transitionText = 'Opening Page') => {
   if (isPageTransitioning) return;
   isPageTransitioning = true;
 
@@ -126,7 +126,7 @@ const openPageWithLoader = (targetHref) => {
   transitionLoader.innerHTML = `
     <div class="site-loader-card">
       <h2 class="site-loader-title">Celestial Scenepacks</h2>
-      <p class="site-loader-sub">Opening Page 2</p>
+      <p class="site-loader-sub">${transitionText}</p>
       <div class="loader-bar" aria-hidden="true"><span></span></div>
     </div>
   `;
@@ -146,11 +146,33 @@ const openPageWithLoader = (targetHref) => {
   });
 };
 
-document.querySelectorAll('[data-open-page2]').forEach((link) => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault();
-    openPageWithLoader(link.getAttribute('href') || 'page2.html');
-  });
+document.addEventListener('click', (event) => {
+  const link = event.target.closest('a[href]');
+  if (!link || event.defaultPrevented) return;
+
+  const rawHref = link.getAttribute('href');
+  if (!rawHref) return;
+  if (link.target === '_blank' || link.hasAttribute('download')) return;
+  if (rawHref.startsWith('#')) return;
+  if (/^(mailto:|tel:|javascript:)/i.test(rawHref)) return;
+
+  let nextUrl;
+  try {
+    nextUrl = new URL(rawHref, window.location.href);
+  } catch {
+    return;
+  }
+
+  if (nextUrl.origin !== window.location.origin) return;
+
+  const isSameDocument =
+    nextUrl.pathname === window.location.pathname &&
+    nextUrl.search === window.location.search;
+
+  if (isSameDocument) return;
+
+  event.preventDefault();
+  openPageWithLoader(nextUrl.href, 'Opening Page');
 });
 
 const showCategory = (category) => {
