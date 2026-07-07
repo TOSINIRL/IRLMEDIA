@@ -97,7 +97,7 @@ img{max-width:100%;display:block}
 .site-loader{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:radial-gradient(circle at 80% 12%, rgba(147,171,217,.22), transparent 34%),radial-gradient(circle at 18% 85%, rgba(231,199,248,.16), transparent 40%),linear-gradient(180deg, #05080f 0%, #03060d 100%);opacity:1;visibility:visible;transition:opacity .55s ease,visibility .55s ease}
 .site-loader.is-leaving{opacity:0;visibility:hidden}
 .site-loader-card{position:relative;width:min(86vw,520px);padding:32px 28px;border-radius:28px;border:1px solid rgba(255,255,255,.14);background:linear-gradient(165deg, rgba(255,255,255,.10), rgba(255,255,255,.03));box-shadow:0 30px 80px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.04);overflow:hidden}
-.site-loader-title{margin:0;color:#f3f6ff;font-family:"Beau Rivage",cursive;font-size:clamp(3rem,8vw,6rem);line-height:.88;text-align:center;animation:loaderTitleIn .75s cubic-bezier(.2,.9,.2,1) both}
+.site-loader-title{margin:0;color:#f3f6ff;font-family:"Alex Brush",cursive;font-size:clamp(3rem,8vw,6rem);line-height:.88;text-align:center;animation:loaderTitleIn .75s cubic-bezier(.2,.9,.2,1) both}
 .site-loader-sub{margin:8px 0 0;color:rgba(236,241,255,.78);text-align:center;font-family:"Sora",sans-serif;font-size:.86rem;letter-spacing:.2em;text-transform:uppercase;animation:loaderSubIn .8s ease .12s both}
 .loader-bar{margin-top:20px;width:100%;height:4px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden}
 .loader-bar span{display:block;height:100%;width:36%;border-radius:inherit;background:linear-gradient(90deg, #e7c7f8, #93abd9, #ede996);animation:loaderRun 1.25s ease-in-out infinite}
