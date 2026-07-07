@@ -116,6 +116,32 @@ requestAnimationFrame(() => {
 const categoryButtons = document.querySelectorAll('[data-category-filter]');
 const categoryCards = document.querySelectorAll('.page-two-card[data-category]');
 
+const openPageWithLoader = (targetHref) => {
+  const transitionLoader = document.createElement('div');
+  transitionLoader.className = 'site-loader';
+  transitionLoader.innerHTML = `
+    <div class="site-loader-card">
+      <h2 class="site-loader-title">Celestial Scenepacks</h2>
+      <p class="site-loader-sub">Loading Scenepacks</p>
+      <div class="loader-bar" aria-hidden="true"><span></span></div>
+    </div>
+  `;
+
+  document.body.appendChild(transitionLoader);
+  document.body.classList.add('is-loading');
+
+  window.setTimeout(() => {
+    window.location.href = targetHref;
+  }, 650);
+};
+
+document.querySelectorAll('a[href="page2.html"]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    openPageWithLoader(link.getAttribute('href'));
+  });
+});
+
 const showCategory = (category) => {
   categoryCards.forEach((card) => {
     const shouldShow = category === 'all' || card.dataset.category === category;
