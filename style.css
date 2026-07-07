@@ -845,19 +845,20 @@ form textarea {
 }
 
 .banner .hero-copy .eyebrow {
-  animation: scriptRise .8s cubic-bezier(0.22, 1, 0.36, 1) .05s both, scriptGlow 4.2s ease-in-out 1s infinite
+  animation: none
 }
 
 .banner .hero-copy .eyebrow::after {
-  animation: underlineDraw .75s ease .22s both
+  animation: none;
+  transform: scaleX(1)
 }
 
 .banner .hero-copy h1 {
-  animation: scriptReveal 1s cubic-bezier(0.22, 1, 0.36, 1) .1s both, scriptGlow 4.6s ease-in-out 1.2s infinite
+  animation: scriptReveal .95s cubic-bezier(0.22, 1, 0.36, 1) .1s both
 }
 
 .banner .hero-copy h1::after {
-  animation: inkSweep 3.4s ease-in-out 1.25s infinite
+  animation: none
 }
 
 @keyframes introUp {
