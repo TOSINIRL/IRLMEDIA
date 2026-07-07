@@ -1,132 +1,272 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Celestial Scenepacks</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Sora:wght@500;700&display=swap"
-    rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Celestial Scenepacks</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
 </head>
 
 <body>
-  <div class="site-loader" data-site-loader aria-hidden="true">
-    <div class="site-loader-card">
-      <h2 class="site-loader-title">Celestial</h2>
-      <p class="site-loader-sub">Loading Scenepacks</p>
-      <div class="loader-bar" aria-hidden="true"><span></span></div>
+    <div class="site-loader" data-site-loader aria-hidden="true">
+        <div class="site-loader-card">
+            <h2 class="site-loader-title">Celestial Scenepacks</h2>
+            <p class="site-loader-sub">Loading Scenepacks</p>
+            <div class="loader-bar" aria-hidden="true"><span></span></div>
+        </div>
     </div>
-  </div>
 
-  <header class="banner">
-    <div class="banner-inner">
-      <div class="hero-copy">
-        <p class="eyebrow">Celestial Scenepacks</p>
-        <h1
-          style="font-family:'Beau Rivage',cursive !important;font-weight:400;line-height:1.15;letter-spacing:0;text-transform:none;">
-          Celestial Scenepacks for creatives, influencers, and stories.</h1>
-        <p class="hero-text">A playful landing page featuring clickable scene buttons, stylized pack tiles, and a
-          waitlist pop-up for new scenepack releases.</p>
-        <div class="cta-row">
-          <button class="cta" id="scroll-to-packs">Browse Packs</button>
-          <button class="cta ghost" id="open-waitlist">Join Waitlist</button>
+    <main>
+        <section class="banner" aria-labelledby="hero-title">
+            <div class="banner-inner">
+                <div class="hero-copy">
+                    <p class="eyebrow">Celestial Scenepacks</p>
+                    <h1 id="hero-title">Downloadable media packs that feel curated, not crowded.</h1>
+                    <p class="hero-text">
+                        Browse spotlight-ready collections for celebrities, influencers, movies,
+                        and shows. Everything is arranged for quick discovery and cleaner handoff.
+                    </p>
+                    <div class="cta-row">
+                        <a class="btn cta" href="#packs">Explore packs</a>
+                        <a class="btn cta ghost" href="page2.html">Open page 2</a>
+                        <button class="btn cta ghost" type="button" data-open-modal>
+                            Request access
+                        </button>
+                    </div>
+                    <div class="chips-row" aria-label="Highlights">
+                        <span class="chip">Fast preview</span>
+                        <span class="chip">Clear downloads</span>
+                        <span class="chip">Category filters</span>
+                        <span class="chip">Mobile-friendly</span>
+                    </div>
+                </div>
+
+                <div class="hero-panel">
+                    <div class="card-panel" aria-label="Featured content panel">
+                        <span class="title-strip">Featured collection</span>
+                        <div class="badge">New drop</div>
+                        <p class="panel-text">
+                            A polished library layout for promotional assets, reference sets, and quick
+                            access files. Built for clean browsing and easy action.
+                        </p>
+                        <div class="panel-buttons">
+                            <button class="panel-btn" type="button" data-scroll-to="packs">
+                                View packs
+                            </button>
+                            <button class="panel-btn secondary" type="button" data-open-modal>
+                                Contact team
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="packs" id="packs" aria-labelledby="packs-title">
+            <div class="section-header">
+                <div>
+                    <p class="eyebrow">Collections</p>
+                    <h2 id="packs-title">Pick a lane and get to the files faster.</h2>
+                </div>
+                <p class="section-intro">
+                    Tabs switch the visible catalog while keeping the page focused on one category at a time.
+                </p>
+            </div>
+
+            <div class="tabs" role="tablist" aria-label="Pack categories">
+                <button class="tab active" type="button" role="tab" aria-selected="true" data-tab="celebs">
+                    Celebrities
+                </button>
+                <button class="tab" type="button" role="tab" aria-selected="false" data-tab="influencers">
+                    Influencers
+                </button>
+                <button class="tab" type="button" role="tab" aria-selected="false" data-tab="movies">
+                    Movies
+                </button>
+                <button class="tab" type="button" role="tab" aria-selected="false" data-tab="shows">
+                    Shows
+                </button>
+            </div>
+
+            <div class="grid" data-tab-panel="celebs">
+                <article class="card">
+                    <img alt="Celebrity media pack preview"
+                        src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80" />
+                    <div class="card-copy">
+                        <h3>Spotlight pack</h3>
+                        <p class="tags">Photos, clips, and reference assets</p>
+                    </div>
+                    <div class="card-actions">
+                        <a class="btn" href="#downloads">Download</a>
+                        <button class="btn ghost" type="button" data-open-modal>Details</button>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img alt="Celebrity archive preview"
+                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80" />
+                    <div class="card-copy">
+                        <h3>Archive bundle</h3>
+                        <p class="tags">Organized by campaign and date</p>
+                    </div>
+                    <div class="card-actions">
+                        <a class="btn" href="#downloads">Download</a>
+                        <button class="btn ghost" type="button" data-open-modal>Details</button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="grid hidden" data-tab-panel="influencers">
+                <article class="card">
+                    <div class="category-thumb influencers" aria-hidden="true"></div>
+                    <div class="card-copy category-card-item">
+                        <h3>Creator set</h3>
+                        <p class="tags">Short-form social assets</p>
+                    </div>
+                    <div class="card-actions">
+                        <a class="btn" href="#downloads">Download</a>
+                        <button class="btn ghost" type="button" data-open-modal>Details</button>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="category-thumb celebrities" aria-hidden="true"></div>
+                    <div class="card-copy category-card-item">
+                        <h3>Brand-ready kit</h3>
+                        <p class="tags">Media highlights and rollups</p>
+                    </div>
+                    <div class="card-actions">
+                        <a class="btn" href="#downloads">Download</a>
+                        <button class="btn ghost" type="button" data-open-modal>Details</button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="grid hidden" data-tab-panel="movies">
+                <article class="card">
+                    <div class="category-thumb movies" aria-hidden="true"></div>
+                    <div class="card-copy category-card-item">
+                        <h3>Film promo pack</h3>
+                        <p class="tags">Artwork, stills, and notes</p>
+                    </div>
+                    <div class="card-actions">
+                        <a class="btn" href="#downloads">Download</a>
+                        <button class="btn ghost" type="button" data-open-modal>Details</button>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="category-thumb movies" aria-hidden="true"></div>
+                    <div class="card-copy category-card-item">
+                        <h3>Poster archive</h3>
+                        <p class="tags">High-resolution presentation files</p>
+                    </div>
+                    <div class="card-actions">
+                        <a class="btn" href="#downloads">Download</a>
+                        <button class="btn ghost" type="button" data-open-modal>Details</button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="grid hidden" data-tab-panel="shows">
+                <article class="card">
+                    <div class="category-thumb shows" aria-hidden="true"></div>
+                    <div class="card-copy category-card-item">
+                        <h3>Series deck</h3>
+                        <p class="tags">Episode assets and teaser frames</p>
+                    </div>
+                    <div class="card-actions">
+                        <a class="btn" href="#downloads">Download</a>
+                        <button class="btn ghost" type="button" data-open-modal>Details</button>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="category-thumb shows" aria-hidden="true"></div>
+                    <div class="card-copy category-card-item">
+                        <h3>Release bundle</h3>
+                        <p class="tags">Launch-ready media selection</p>
+                    </div>
+                    <div class="card-actions">
+                        <a class="btn" href="#downloads">Download</a>
+                        <button class="btn ghost" type="button" data-open-modal>Details</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="download-area" id="downloads" aria-labelledby="downloads-title">
+            <div class="download-header">
+                <div>
+                    <p class="eyebrow">Downloads</p>
+                    <h2 id="downloads-title">Quick access files for each workflow.</h2>
+                </div>
+                <p class="section-intro">
+                    The cards below animate in when the section becomes visible, matching the motion already defined in
+                    CSS.
+                </p>
+            </div>
+
+            <div class="download-row">
+                <article class="download-item">
+                    <div class="commit-visual">
+                        <span class="commit-step"><strong>1</strong> Select</span>
+                        <span class="commit-step"><strong>2</strong> Preview</span>
+                        <span class="commit-step"><strong>3</strong> Save</span>
+                    </div>
+                    <p>Choose a pack, review the contents, then download the version you need.</p>
+                    <a class="quick-download-btn" href="#" aria-label="Download celebrity pack">Download now</a>
+                </article>
+
+                <article class="download-item">
+                    <div class="commit-visual">
+                        <span class="commit-step"><strong>A</strong> Filter</span>
+                        <span class="commit-step"><strong>B</strong> Match</span>
+                    </div>
+                    <p>Use category tabs to narrow down the view before sending files to a client or team.</p>
+                    <a class="quick-download-btn" href="#" aria-label="Download influencer pack">Open bundle</a>
+                </article>
+
+                <article class="download-item">
+                    <div class="commit-visual">
+                        <span class="commit-step"><strong>01</strong> Pick</span>
+                        <span class="commit-step"><strong>02</strong> Share</span>
+                        <span class="commit-step"><strong>03</strong> Deliver</span>
+                    </div>
+                    <p>Fast handoff for seasonal content, launch materials, and reference kits.</p>
+                    <button class="quick-download-btn" type="button" data-open-modal>Request link</button>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" aria-hidden="true" aria-labelledby="modal-title" role="dialog">
+        <div class="modal-content">
+            <button class="modal-close" type="button" aria-label="Close modal" data-close-modal>
+                ×
+            </button>
+            <p class="eyebrow">Request access</p>
+            <h2 id="modal-title">Send a quick request</h2>
+            <p class="section-intro">
+                This placeholder form is wired for the open and close interactions already styled in the sheet.
+            </p>
+            <form>
+                <input type="text" name="name" placeholder="Name" autocomplete="name" />
+                <input type="email" name="email" placeholder="Email" autocomplete="email" />
+                <select name="category" aria-label="Select category">
+                    <option>Choose a category</option>
+                    <option>Celebrities</option>
+                    <option>Influencers</option>
+                    <option>Movies</option>
+                    <option>Shows</option>
+                </select>
+                <textarea name="message" rows="4" placeholder="What do you need?"></textarea>
+                <button class="btn primary" type="submit">Send request</button>
+            </form>
         </div>
-        <div class="chips-row">
-          <button class="chip category-btn" data-category="celebrities">Celebrities</button>
-          <button class="chip category-btn" data-category="influencers">Influencers</button>
-          <button class="chip category-btn" data-category="movies">Movies</button>
-          <button class="chip category-btn" data-category="shows">Shows</button>
-        </div>
-      </div>
-      <div class="hero-panel">
-        <div class="card-panel">
-          <div class="title-strip">My MBG</div>
-          <div class="badge">ScenePack</div>
-          <p class="panel-text">Click the words, explore a category, and download your next scene cover asset.</p>
-          <div class="panel-buttons">
-            <button class="panel-btn">Click here to see more</button>
-            <button class="panel-btn secondary">request scenepack</button>
-          </div>
-        </div>
-      </div>
     </div>
-  </header>
-
-  <main>
-    <section class="download-area" id="downloadArea">
-      <div class="download-header">
-        <div>
-          <p class="eyebrow">Download Center</p>
-          <h2>Ready to grab a pack?</h2>
-        </div>
-        <p>These quick links represent the current available scenepacks. Click any to test the download action.</p>
-      </div>
-      <div class="download-row">
-        <div class="download-item">
-          <p>Celebrity Cuts</p>
-          <button class="quick-download-btn" data-pack="Celebrity Cuts">click here to download</button>
-        </div>
-        <div class="download-item">
-          <p>Influencer Edit</p>
-          <button class="quick-download-btn" data-pack="Influencer Edit">click here to download</button>
-        </div>
-        <div class="download-item">
-          <p>Movie Moment</p>
-          <button class="quick-download-btn" data-pack="Movie Moment">click here to download</button>
-        </div>
-        <div class="download-item">
-          <p>Show Scenes</p>
-          <button class="quick-download-btn" data-pack="Show Scenes">click here to download</button>
-        </div>
-      </div>
-    </section>
-
-    <section id="categorySection" class="category-section hidden">
-      <div class="category-shell">
-        <button id="backToLanding" class="back-link">← Back to all vibes</button>
-        <div class="section-header">
-          <div>
-            <p class="eyebrow">ScenePack categories</p>
-            <h2 id="categoryTitle">Choose the vibe you want to explore</h2>
-          </div>
-          <p id="categoryDescription">Tap any category to filter the scenepack grid below. Each card includes a quick
-            action.</p>
-        </div>
-
-        <div class="tabs" id="categoryTabs" role="tablist" aria-label="Category filters">
-          <button class="tab active" role="tab" aria-selected="true" data-filter="all">All</button>
-          <button class="tab" role="tab" aria-selected="false" data-filter="celebrities">Celebrities</button>
-          <button class="tab" role="tab" aria-selected="false" data-filter="influencers">Influencers</button>
-          <button class="tab" role="tab" aria-selected="false" data-filter="movies">Movies</button>
-          <button class="tab" role="tab" aria-selected="false" data-filter="shows">Shows</button>
-        </div>
-
-        <div class="category-grid grid" id="categoryGrid"></div>
-      </div>
-    </section>
-  </main>
-
-  <div id="waitlist-modal" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <button class="modal-close" id="close-waitlist">✕</button>
-      <h3>Request a ScenePack / Join Waitlist</h3>
-      <p>Leave your email and a short note about the type of scenepack you want.</p>
-      <form id="waitlist-form">
-        <input type="email" name="email" placeholder="you@example.com" required>
-        <select name="category">
-          <option value="celebrities">Celebrities</option>
-          <option value="influencers">Influencers</option>
-          <option value="movies">Movies</option>
-          <option value="shows">Shows</option>
-        </select>
-        <textarea name="note" placeholder="Short note (optional)" rows="3"></textarea>
-        <button class="btn primary" type="submit">Join Waitlist</button>
-      </form>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
 </body>
 
 </html>
