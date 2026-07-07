@@ -20,6 +20,10 @@ img{max-width:100%;display:block}
 .hero-copy{padding:32px 28px;border:1px solid rgba(255,255,255,.08);border-radius:30px;backdrop-filter:blur(14px);background:rgba(5,8,12,.82);box-shadow:0 28px 70px rgba(0,0,0,.35)}
 .eyebrow{font-family:"Beau Rivage",cursive;font-size:clamp(1.6rem,2.8vw,2.3rem);font-weight:400;letter-spacing:0;text-transform:none;color:var(--soft-lilac);margin:0 0 12px;line-height:1}
 .hero-copy h1{font-size:min(3.2rem,clamp(2.4rem,5vw,3.2rem));line-height:1.02;margin:0 0 16px;max-width:13ch}
+.banner .hero-copy .eyebrow,
+.banner .hero-copy h1{position:relative;display:inline-block;transform-origin:left center}
+.banner .hero-copy h1::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(255,255,255,0) 36%,rgba(255,255,255,.42) 50%,rgba(255,255,255,0) 64%);transform:translateX(-160%);mix-blend-mode:screen;pointer-events:none}
+.banner .hero-copy .eyebrow::after{content:'';position:absolute;left:0;bottom:-8px;height:2px;width:100%;background:linear-gradient(90deg,rgba(231,199,248,.95),rgba(147,171,217,.4));transform:scaleX(0);transform-origin:left center;border-radius:999px}
 .hero-text{color:rgba(255,255,255,.78);line-height:1.8;max-width:44rem;margin:0 0 24px}
 .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:18px}
 .cta{background:linear-gradient(135deg,var(--raspberry),#f7a5d2);border:none;padding:14px 20px;border-radius:18px;color:#111;font-weight:700;box-shadow:0 16px 32px rgba(242,97,156,.22);transition:transform .2s ease,box-shadow .2s ease}
@@ -124,9 +128,33 @@ form textarea{resize:vertical}
 .category-download-area{padding:0;margin:30px 0 0}
 body.is-ready .hero-copy{animation:introUp .6s cubic-bezier(0.22,1,0.36,1) both}
 body.is-ready .hero-panel{animation:introUp .6s cubic-bezier(0.22,1,0.36,1) .12s both}
+body.is-ready .banner .hero-copy .eyebrow{animation:scriptRise .8s cubic-bezier(0.22,1,0.36,1) .05s both,scriptGlow 4.2s ease-in-out 1s infinite}
+body.is-ready .banner .hero-copy .eyebrow::after{animation:underlineDraw .75s ease .22s both}
+body.is-ready .banner .hero-copy h1{animation:scriptReveal 1s cubic-bezier(0.22,1,0.36,1) .1s both,scriptGlow 4.6s ease-in-out 1.2s infinite}
+body.is-ready .banner .hero-copy h1::after{animation:inkSweep 3.4s ease-in-out 1.25s infinite}
 @keyframes introUp{
   from{opacity:0;transform:translateY(16px)}
   to{opacity:1;transform:translateY(0)}
+}
+@keyframes scriptReveal{
+  from{opacity:0;filter:blur(7px);transform:translateY(12px) scale(.985)}
+  to{opacity:1;filter:blur(0);transform:translateY(0) scale(1)}
+}
+@keyframes scriptRise{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes scriptGlow{
+  0%,100%{text-shadow:0 0 0 rgba(231,199,248,0)}
+  50%{text-shadow:0 0 18px rgba(231,199,248,.24)}
+}
+@keyframes inkSweep{
+  0%,62%{transform:translateX(-160%)}
+  100%{transform:translateX(160%)}
+}
+@keyframes underlineDraw{
+  from{transform:scaleX(0)}
+  to{transform:scaleX(1)}
 }
 @keyframes downloadReveal{
   from{opacity:0;transform:translateY(18px) scale(.98)}
@@ -163,6 +191,7 @@ body.is-ready .hero-panel{animation:introUp .6s cubic-bezier(0.22,1,0.36,1) .12s
 }
 @media (prefers-reduced-motion: reduce){
   .loader-bar span,.site-loader-title,.site-loader-sub{animation:none}
+  .banner .hero-copy .eyebrow,.banner .hero-copy h1,.banner .hero-copy .eyebrow::after,.banner .hero-copy h1::after{animation:none}
   .view-enter,.view-exit,.download-area.is-visible .download-item,body.is-ready .hero-copy,body.is-ready .hero-panel{animation:none}
   .chip,.download-area::before{animation:none}
 }
