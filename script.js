@@ -115,14 +115,18 @@ requestAnimationFrame(() => {
 
 const categoryButtons = document.querySelectorAll('[data-category-filter]');
 const categoryCards = document.querySelectorAll('.page-two-card[data-category]');
+let isPageTransitioning = false;
 
 const openPageWithLoader = (targetHref) => {
+  if (isPageTransitioning) return;
+  isPageTransitioning = true;
+
   const transitionLoader = document.createElement('div');
   transitionLoader.className = 'site-loader';
   transitionLoader.innerHTML = `
     <div class="site-loader-card">
       <h2 class="site-loader-title">Celestial Scenepacks</h2>
-      <p class="site-loader-sub">Loading Scenepacks</p>
+      <p class="site-loader-sub">Opening Page 2</p>
       <div class="loader-bar" aria-hidden="true"><span></span></div>
     </div>
   `;
@@ -132,7 +136,7 @@ const openPageWithLoader = (targetHref) => {
 
   window.setTimeout(() => {
     window.location.href = targetHref;
-  }, 650);
+  }, 420);
 };
 
 document.querySelectorAll('a[href="page2.html"]').forEach((link) => {
